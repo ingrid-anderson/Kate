@@ -1,0 +1,40 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block page_title %}Warrior Media Inc.{% endblock page_title %}</title>
+    <link rel="stylesheet" href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'lib/fontAwesome/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'dist/styles.css' %}">
+    {% block include_stylesheet %}{% endblock include_stylesheet %}
+    {% block page_styles %}{% endblock page_styles %}
+</head>
+
+<body>
+    {% block page_header %}
+        {% include "include/header_main.htm" %}
+    {% endblock page_header %}
+    	 
+
+    {% block main_text %}{% endblock main_text %}
+
+    {% block page_footer %}
+        {% include "include/footer_main.htm" %}	 
+    {% endblock page_footer %}
+    
+    <script src="{% static 'dist/scripts.js' %}"></script>
+    <script src="{% static 'lib/jquery/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'lib/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'lib/owlCarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/waypoint/jquery.waypoints.min.js' %}"></script>
+    {% block include_scripts %}{% endblock include_scripts %}
+
+    <script type="text/javascript">
+        {% block page_scripts %}{% endblock page_scripts %}
+    </script>
+</body>
+</html>

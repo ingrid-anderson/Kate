@@ -1,0 +1,46 @@
+/*
+    Set all typography
+    text-size = Font Size
+*/
+
+$text-small: .5em;
+$text-medium: .75em;
+$text-normal: 1em;
+$text-large: 1.25em;
+$text-xlarge: 1.5em;
+
+
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic");
+body{
+	font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.text-size-one {
+	font-size:1em !important;
+}
+.text-size-one_two{
+	font-size:1.2em !important;
+}
+.text-size-one_five{
+	font-size:1.5em !important;
+}
+.text-size-one_eight{
+	font-size:1.8em !important;
+}
+.text-size-two{
+	font-size: 2em !important;
+}
+.text-size-two_five{
+	font-size:2.5em !important;
+}
+.text-size-three {
+	font-size:3em !important;
+}
+.text-size-three_five{
+	font-size:3.5em !important;
+}
+.text-size-four{
+	font-size:4em !important;
+}
+.text-size-five{
+	font-size:5em !important;
+}
