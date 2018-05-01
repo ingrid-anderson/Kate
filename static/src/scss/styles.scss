@@ -1,16 +1,17 @@
+@import "_variables";
 @import "_typography";
 @import "_buttons";
-@import "_colors";
+
 body {
     color: $color-primary;
     font-size:1.2em;
+    @media screen and (min-width:1980px) {
+        font-size:$text-large-five;
+    }
 }
 img {
     max-width:100%;
     height:auto;
-}
-section {
-    margin:25px 0px;
 }
 .column {
     padding:15px;
@@ -21,37 +22,97 @@ section {
         @extend .column;
     }
 }
+
+.container-main {
+    background-color: $color-grey;
+}
+.container-layout {
+    background-color: $color-white;
+    margin: 0 auto;
+    
+    @media screen and (min-width:1200px) {
+        width:1200px;
+    }
+    @media screen and (min-width:1980px) {
+        width:1980px;
+    }
+}
 .container-content {
-    width:900px;
-    margin:0 auto;
-    padding:25px;
-    div {
-        margin-top:10px;
+    // margin:15px auto 0px;
+    padding:10px 35px 15px;
+    line-height:1.75em;
+
+    & > div {
+        margin-top:25px;
+    }
+    & > h2, h3 {
+        margin:15px 0px;
+        text-align:center;
     }
     p {
-        padding:10px 0;
+        margin:10px 0;
     }
-    a {
-        display:inline-block;
+    .content-blurb {
+        text-align:center;
+    }
+    @media screen and (min-width:992px) {
+        width:900px;
+        padding:25px 75px;
         margin:0 auto;
-        color:$color-white;
-        font-weight:bold;
-        padding:10px 15px;
-        background-color:$color-red;
-        border-radius: 10px
+        p {
+            margin:0px 0px 30px;
+        }
     }
+    @media screen and (min-width:1200px) {
+        width:1100px;
+    }
+    @media screen and (min-width:1980px) {
+        width:1400px;
+    }
+}
+.header-top {
+    background-color: $color-white;
+    background-image: url('../images/Assets/background/dvsup.png');
+    background-repeat: repeat;
+    color: $color-white;
+    padding:25px;
+    h1 {
+        font-size: $text-xlarge;
+    }
+    @media screen and (min-width:1200px) {
+        height: 300px;
+        padding:0px;
+
+        h1 {
+            font-size: $text-xnlarge-three;
+        }
+    }
+}
+.header-brand-subtitle {
+    height:200px;
+    background-color:$color-dark-grey;
+    color:white;
+    display:flex;
+    align-items:center;
+    font-size: $text-xlarge-five;
+    justify-content: center;
+    text-align:center;
+    padding:15px;
 }
 #header-banner {
     background-color:$color-grey;
-    height:250px;
-
+    background-image:URL('../images/Banners/header_img.jpg');
+    height:150px;
     color:white;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4rem;
+    text-align:center;
+    font-size: $text-large-five;
     font-weight: bold;
-    letter-spacing: 1.15rem;
+    letter-spacing: .5rem;
+    margin:0 auto;
+
 
     &-brand {
         @extend #header-banner;
@@ -69,26 +130,104 @@ section {
         @extend #header-banner;
         background-image:URL('../images/Banners/header_img.jpg');
     }
+    @media screen and (min-width:768px) {
+        height:175px;
+        font-size: $text-xlarge;
+        letter-spacing: 1.15rem;
+    }
+    @media screen and (min-width:1200px) {
+        height:250px;
+        font-size: $text-xnlarge-three;
+    }
+}
+
+
+.grid-flex {
+    &>div {
+        margin-bottom:45px;
+    }
+    @media screen and (min-width:768px) {
+        &>div {
+            margin-bottom:20px;
+        }    }
+    @media screen and (min-width:992px) {
+        &>div {
+            margin-bottom:0px;
+        }    }
+}
+.warrior-ethos-block {
+    margin:25px 0 !important;
+
+    @media screen and (min-width:768px) {
+        margin:75px 0 !important;
+    }
+
+}
+.warrior-ethos {
+    font-size:$text-normal;
+    text-align:center;
+    span {
+        margin-right:10px;
+    }
+    span.text-active-blue {
+        color:$color-blue;
+        font-size:$text-large;
+        text-decoration:underline;
+    }
+    span:hover {
+        text-decoration:underline;
+        cursor: pointer;
+    }
+    @media screen and (min-width:768px) {
+        font-size:$text-xlarge;
+        span {
+            margin-right:15px;
+        }
+    }
+}
+.warrior-ethos-text {
+    margin-top:25px;
+    h2 {
+        border-bottom:1px dashed $color-dark-grey;
+    }
+    @media screen and (min-width:768px) {
+        margin-top:75px;
+
+    }
 }
 
 footer {
     text-align:center;
     color:white;
-    font-size: $text-medium;
+    font-size: $text-normal;
+    padding:0;
+    margin:0; 
+    a {
+        color:white;
+    }
     .social-media {
-        padding:0;
-        margin:0;
-        background-color:$color-grey;
+        background-color:$color-primary;
         height:100px;
         display:flex;
         align-items:center;
         justify-content:center;
+        padding:0; 
+        
+        img {
+            margin:0 25px;
+            height:40px;
+        }
     }
     .footer-content {
-        padding:0;
-        margin:0;
-        background-color:$color-black;
+        background-color:$color-dark-grey;
         height:150px;
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        align-content:center;
+        padding:0;
+        div {
+            padding-top:10px;
+        }
     }
-
 }

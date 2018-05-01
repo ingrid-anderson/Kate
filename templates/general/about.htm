@@ -1,175 +1,151 @@
-{% extends "base.htm" %}
-{% load staticfiles %}
+{% extends "base.htm" %} 
+{% load staticfiles %} 
 {% block page_title %}Warrior Media's - About Us{% endblock page_title %}
-
+{% block include_stylesheet %}
+    <link rel="stylesheet" href="{% static 'lib/owlCarousel/assets/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'lib/owlCarousel/assets/owl.theme.default.css' %}">
+{% endblock include_stylesheet %}
 {% block main_text %}
-<main>
-    <section>
-        <header id="header-brand">Who Are We</header>
-        <div class="container-content">
-            <section>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis tortor sit amet augue placerat ornare vitae non urna.
-                    Phasellus at consectetur nibh. Ut eget egestas sapien, a euismod nulla. Suspendisse tincidunt est eget pulvinar interdum.
-                    Vivamus posuere ultrices purus, et pellentesque risus aliquam ac. Praesent nec gravida metus, sed suscipit metus. Nulla
-                    egestas id nisi quis efficitur. Duis a magna eget risus dictum finibus ac a felis. In hac habitasse platea dictumst.
-                </p>
-                <p>
-                    Morbi et aliquam mi. Curabitur venenatis interdum malesuada. Sed non nibh non massa porttitor malesuada sed eget massa. Nunc
-                    eu tortor eu risus congue porttitor sed vel magna. Morbi ut consectetur felis. Vivamus in ex porttitor, mattis risus
-                    eu, fermentum massa. Vestibulum sed diam eu augue cursus lobortis vel sed erat. Nulla non tellus ut ante sagittis semper.
-                    Nunc interdum placerat dui. Nulla dapibus gravida lorem, sed posuere lorem vehicula non. In blandit ligula eget risus
-                    vehicula, eget scelerisque enim rhoncus. Donec consequat neque non consectetur euismod. Maecenas in tempor ipsum, sit
-                    amet tempor sem. Cras sodales purus nec nisi feugiat rhoncus.
-                </p>
-                <p>
-                    Integer non rhoncus turpis, eu porttitor nibh. Morbi eu tortor id purus mattis congue semper at enim. Etiam malesuada, neque
-                    nec aliquam dapibus, mauris est tincidunt odio, a tristique leo urna eu augue. Vivamus volutpat eu elit eu tristique.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel sem consectetur, viverra mauris ornare, commodo
-                    turpis. Vivamus ut finibus lorem. Cras dapibus, justo a commodo semper, metus dui tincidunt quam, vel ornare leo velit
-                    id enim. Quisque auctor quam vitae eros tempor fringilla. Pellentesque pharetra vel nunc id porta.
-                </p>
-            </section>
-            <section>
-                <header class="section-title">Warrior Media's Culture</header>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc imperdiet suscipit tristique. Cras sed metus id neque tristique sodales. Cras efficitur eu est sit amet dapibus. Nulla sed nulla luctus, malesuada lectus et, eleifend turpis. Cras non leo tellus. </p>
-                <div id="warrior-ethos">
-                    <span>W</span>
-                    <span>A</span>
-                    <span>R</span>
-                    <span>R</span>
-                    <span>I</span>
-                    <span>O</span>
-                    <span>R</span>
-                    <span>S</span>
-                </div>
-                <div class="warrior-ethos-text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc imperdiet suscipit tristique. Cras sed metus id neque tristique sodales. Cras efficitur eu est sit amet dapibus. Nulla sed nulla luctus, malesuada lectus et, eleifend turpis. Cras non leo tellus. </p>
-                </div>
-            </section>
-            <section>
-                <header class="section-title">Our Team</header>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc imperdiet suscipit tristique. Cras sed metus id neque tristique sodales. Cras efficitur eu est sit amet dapibus. Nulla sed nulla luctus, malesuada lectus et, eleifend turpis. Cras non leo tellus.</p>
+    <div class="container-layout">
+        <header id="header-banner">Who Are We</header>
+        <section>
+            <div class="container-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis tortor sit amet augue placerat ornare vitae non urna. Phasellus at consectetur nibh. Ut eget egestas sapien, a euismod nulla. Suspendisse tincidunt est eget pulvinar interdum. Vivamus posuere ultrices purus, et pellentesque risus aliquam ac. Praesent nec gravida metus, sed suscipit metus. Nulla egestas id nisi quis efficitur. Duis a magna eget risus dictum finibus ac a felis. In hac habitasse platea dictumst.</p>
+            </div>
+        </section>
+        {% include "include/warrior_ethos.htm" %}
+        <section>
+            <div class="container-content">
+                <h2 class="text-center">Our Team</h2>
+                <p class="content-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc imperdiet suscipit tristique. Cras sed metus id
+                    neque tristique sodales. Cras efficitur eu est sit amet dapibus. Nulla sed nulla luctus, malesuada lectus
+                    et, eleifend turpis. Cras non leo tellus.</p>
                 <div class="row no-gutter">
+                    {% for warrior in warriors %}
                     <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/150x150" alt="Team Members Name">
+                        {% if warrior.image %}
+                        <img class="img-fluid" src="{{ warrior.image.url }}" alt="{{ warrior.name.url }}">
+                        {% else %}
+                        <img class="img-fluid" src="{% static 'images/Assets/generic-user.png' %}" alt="{{ warrior.name }}">
+                        {% endif %}
                         <div class="team-member">
-                            <span class="member-name">Members Name</span>
-                            <span class="member-position">Members Position</span>
+                            <span class="d-block member-name">{{ warrior.first_name }} {{ warrior.last_name }}</span>
+                            <span class="d-block member-position">{{ warrior.position }}</span>
                         </div>
                     </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container-content">
+                <h2 class="text-center">Life At Warrior Media</h2>
+                <p class="content-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc imperdiet suscipit tristique. Cras sed metus id
+                    neque tristique sodales. Cras efficitur eu est sit amet dapibus. Nulla sed nulla luctus, malesuada lectus
+                    et, eleifend turpis. Cras non leo tellus.</p>
+                <div class="row">
                     <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/150x150" alt="Team Members Name">
-                        <div class="team-member">
-                            <span class="member-name">Members Name</span>
-                            <span class="member-position">Members Position</span>
-                        </div>
+                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
                     </div>
                     <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/150x150" alt="Team Members Name">
-                        <div class="team-member">
-                            <span class="member-name">Members Name</span>
-                            <span class="member-position">Members Position</span>
-                        </div>
+                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
                     </div>
                     <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/150x150" alt="Team Members Name">
-                        <div class="team-member">
-                            <span class="member-name">Members Name</span>
-                            <span class="member-position">Members Position</span>
-                        </div>
+                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
                     </div>
                     <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/150x150" alt="Team Members Name">
-                        <div class="team-member">
-                            <span class="member-name">Members Name</span>
-                            <span class="member-position">Members Position</span>
-                        </div>
+                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
                     </div>
                     <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/150x150" alt="Team Members Name">
-                        <div class="team-member">
-                            <span class="member-name">Members Name</span>
-                            <span class="member-position">Members Position</span>
-                        </div>
+                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
                     </div>
                     <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/150x150" alt="Team Members Name">
-                        <div class="team-member">
-                            <span class="member-name">Members Name</span>
-                            <span class="member-position">Members Position</span>
-                        </div>
+                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
                     </div>
                     <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/150x150" alt="Team Members Name">
-                        <div class="team-member">
-                            <span class="member-name">Members Name</span>
-                            <span class="member-position">Members Position</span>
-                        </div>
+                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
                     </div>
                 </div>
-            </section>
-            <section>
-                <header class="section-title">Life At Warrior Media</header>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc imperdiet suscipit tristique. Cras sed metus id neque tristique sodales. Cras efficitur eu est sit amet dapibus. Nulla sed nulla luctus, malesuada lectus et, eleifend turpis. Cras non leo tellus.</p>
+            </div>
+        </section>
+        <section>
+            <div class="container-content">
+                <h2 class="text-center">Join Our Team</h2>
+                <p class="content-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc imperdiet suscipit tristique. Cras sed metus id
+                    neque tristique sodales. Cras efficitur eu est sit amet dapibus. Nulla sed nulla luctus, malesuada lectus
+                    et, eleifend turpis. Cras non leo tellus. </p>
+                <div class="link-main-active text-center">
+                    <a href="https://www.indeed.com/" title="Indeed" target="_blank">Join Us</a>
+                </div>
                 <div class="row no-gutter">
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
+                    <div class="col-12 col-md-4">
+                        <img src="http://via.placeholder.com/640x360" alt="Our Team">
                     </div>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
+                    <div class="col-12 col-md-4">
+                        <img src="http://via.placeholder.com/640x360" alt="Our Team">
                     </div>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
+                    <div class="col-12 col-md-4">
+                        <img src="http://via.placeholder.com/640x360" alt="Our Team">
                     </div>
                 </div>
-            </section>
-            <section>
-                <header class="section-title">Join Our Team</header>
-                <div class="container-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc imperdiet suscipit tristique. Cras sed metus id neque tristique sodales. Cras efficitur eu est sit amet dapibus. Nulla sed nulla luctus, malesuada lectus et, eleifend turpis. Cras non leo tellus. </p>
-                    <a href="learnmore">Join us</a>
-                    <div class="row no-gutter">
-                        <div class="col-12 col-md-4">
-                            <img src="http://via.placeholder.com/640x360" alt="Our Team">
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <img src="http://via.placeholder.com/640x360" alt="Our Team">
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <img src="http://via.placeholder.com/640x360" alt="Our Team">
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </section>
-</main>
-{% endblock main_text %}
+            </div>
+        </section>
+    </div>
+    {% endblock main_text %}
+    {% block page_scripts %}
+        {{block.super}}
+        let warriorCarousel = $('.warrior-ethos-carousel');
+        warriorCarousel.owlCarousel({
+            loop:true,
+            nav:false,
+            dots:true,
+            dotData:true,
+            items:1,
+            onTranslated: updateCarousel,
+        });
+
+        // Add Click Event Listener to WARRIORS span text
+        let ethosLetters = document.querySelectorAll(".warrior-ethos span");
+        ethosLetters.forEach(function(letter) {
+            letter.addEventListener("click", function() {
+
+                // Remove class from selector
+                document.querySelector(".warrior-ethos .text-active-blue").classList.remove("text-active-blue");
+                this.classList.add("text-active-blue");
+
+                // Get Corresponding owlCarousel position of the clicked letter
+                let dataPosition = letter.dataset.position;
+
+                // Move Ethos Carousel to correct position
+                warriorCarousel.trigger('to.owl.carousel', dataPosition);
+            }, false);
+        });
+        document.querySelector(".warrior-ethos-carousel .owl-dots").classList.add("d-none");
+        function updateCarousel(event) {
+
+            let container = document.querySelector(".warrior-ethos");
+
+            //Get the correct letter corresponding to the text
+            let selectedIndex = container.querySelector(`span[data-position=\"${event.page.index}\"]`);
+
+            // Remove class from selector
+            document.querySelector(".warrior-ethos .text-active-blue").classList.remove("text-active-blue");
+            selectedIndex.classList.add("text-active-blue");
+        }
+
+    {% endblock page_scripts %}

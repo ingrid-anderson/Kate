@@ -51,6 +51,8 @@ class Employee(models.Model):
                     blank=True,
                 )
     created = models.DateTimeField(auto_now=False, auto_now_add=True)
+    display_order = models.PositiveIntegerField(default=25)
+
     active = models.BooleanField(default=True)
 
     def __unicode__(self):

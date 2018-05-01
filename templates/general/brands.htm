@@ -1,43 +1,93 @@
 {% extends "base.htm" %}
 {% load staticfiles %}
 {% block page_title %}Warrior Media's - Our Brand - {{brand_name}}{% endblock page_title %}
+{% block include_stylesheet %}
+    <link rel="stylesheet" href="{% static 'lib/owlCarousel/assets/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'lib/owlCarousel/assets/owl.theme.default.css' %}">
+{% endblock include_stylesheet %}
 
 {% block main_text %}
-<main>
-    <section>
-        <header id="header-banner-brand" class="header-{{brand_name}}">{{brand_name}}</header>
-        <div class="container-content">
-            {{blurb_content}}
-            <div class="row no-gutter">
-                <div class="col-12 col-md-6">
-                    <h3 class="header-title">About {{brand_owner}}</h3>
-                    {% block content_owner %}{% endblock content_owner %}
-                </div>
-                <div class="col-12 col-md-6">
-                    <img src="{% block image_owner %}{% endblock image_owner %}" alt="About {{brand_owner}} Image">
-                </div>
-                <div class="col-12 col-md-6 pull-md-6">
-                    <img src="http://via.placeholder.com/640x360" alt="{{brand_name}} Goals Image">
-                </div>
-                <div class="col-12 col-md-6 push-md-6">
-                    <h3 class="header-title">{{brand_name}} Goals</h3>
-                    {% block content_brand %}{% endblock content_brand %}
+    <div class="container-layout">
+        <section>
+            <header id="header-banner-brand" class="header-{{brand_name}}">{{brand_name}}</header>
+            <div class="container-content">
+                <p class="content-blurb">{{blurb_content}}</p>
+                <div class="grid-flex row no-gutter mt-5">
+                    <div class="col-12 col-md-6 order-1">
+                        <h3 class="header-title">About {{brand_owner}}</h3>
+                        {% block content_owner %}{% endblock content_owner %}
+                    </div>
+                    <div class="col-12 col-md-6 align-self-center order-2">
+                        <img src="{% block image_owner %}{% endblock image_owner %}" alt="About {{brand_owner}} Image">
+                    </div>
+                    <div class="col-12 col-md-6 push-md-6 order-3 order-md-4">
+                        <h3 class="header-title">{{brand_name}} Goals</h3>
+                        {% block content_brand %}{% endblock content_brand %}
+                    </div>
+                    <div class="col-12 col-md-6 pull-md-6 align-self-center order-4 order-md-3">
+                        <img src="http://via.placeholder.com/640x360" alt="{{brand_name}} Goals Image">
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section>
-        <header class="header-brand-subtitle header-{{brand_name}}-color">{% block sub_title %}{% endblock sub_title %}</header>
-        <div class="container-content">
-            {% block sub_content %}{% endblock sub_content %}
-        </div>
-    </section>
-    <section>
-        <div class="container-content">
-            {% block extra_content %}{% endblock extra_content %}
-            {% block testimonials %}{% endblock testimonials %}
-            <a href="{{brand_url}}">Visit {{brand_name}}</a>
-        </div>
-    </section>
-</main>
+        </section>
+        <section>
+            <header class="header-brand-subtitle"><h2>{% block sub_title %}{% endblock sub_title %}</h2></header>
+            <div class="container-content">
+                {% block sub_content %}{% endblock sub_content %}
+            </div>
+        </section>
+        <section>
+            <div class="container-content pt-0">
+                {% block extra_content %}{% endblock extra_content %}
+            </div>
+        </section>
+        <section>
+            <div class="container-content pt-0">
+                {% if testimonials %}
+                <h2>Testimonials Header</h2>
+                <div class="owl-carousel owl-theme testimonials text-center mt-2 mt-md-4">
+                    {% for testimonial in testimonials %}
+                    <div class="item">
+                        {% if testimonial.image %}
+                        <img src="{% static '{{ testimonial.image_testimonial }}' %}" alt="Testimonial"> {% elif testimonial.content %}
+                        <p>{{ testimonial.content }}</p>
+                        <p> - {{ testimonial.testimonial_by }}</p>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </section>
+        <section>
+            <div class="container-content">
+                <div class="link-main-active text-center">
+                    <a href="{{brand_url}}" target="_blank">Visit {{brand_name}}</a>
+                </div>
+            </div>
+        </section>
+    </div>
 {% endblock main_text %}
+{% block page_scripts %}
+    {{block.super}}
+    $('.owl-carousel').owlCarousel({
+		loop:true,
+		margin:35,
+        nav:true,
+        dots: true,
+        autoplay:true,
+		responsive:{
+			0:{
+				items:1
+            },
+            {% if testimonials.count < 1 %}
+            768: {
+                items:1,
+                loop:false,
+                nav:false,
+                mouseDrag:false,
+            }         
+            {% endif %}
+		}
+	})
+{% endblock page_scripts %}

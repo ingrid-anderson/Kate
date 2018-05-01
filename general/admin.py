@@ -18,7 +18,7 @@ class BrandTestimonialAdmin(admin.ModelAdmin):
         model = BrandTestimonial
 
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'position','active','created')
+    list_display = ('first_name', 'last_name', 'position','display_order', 'active','created')
     search_fields = ['first_name', 'last_name']
 
     class meta:

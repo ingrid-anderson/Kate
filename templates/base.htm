@@ -18,14 +18,13 @@
     {% block page_header %}
         {% include "include/header_main.htm" %}
     {% endblock page_header %}
-    	 
-
-    {% block main_text %}{% endblock main_text %}
-
+    <main class="container-main">
+        {% block main_text %}{% endblock main_text %}
+    </main>
     {% block page_footer %}
         {% include "include/footer_main.htm" %}	 
     {% endblock page_footer %}
-    
+
     <script src="{% static 'dist/scripts.js' %}"></script>
     <script src="{% static 'lib/jquery/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'lib/bootstrap/js/bootstrap.min.js' %}"></script>
