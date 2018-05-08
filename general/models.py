@@ -71,6 +71,7 @@ class WarriorMediaImage(models.Model):
                     blank=True,
                 )
     active = models.BooleanField(default=False)
+    display_order = models.PositiveIntegerField(default=50)
 
     def __unicode__(self):
         return self.name

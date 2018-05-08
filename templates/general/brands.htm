@@ -1,6 +1,6 @@
 {% extends "base.htm" %}
 {% load staticfiles %}
-{% block page_title %}Warrior Media's - Our Brand - {{brand_name}}{% endblock page_title %}
+{% block page_title %}Warrior Media's - Our Brand - {{brand.brand_name}}{% endblock page_title %}
 {% block include_stylesheet %}
     <link rel="stylesheet" href="{% static 'lib/owlCarousel/assets/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'lib/owlCarousel/assets/owl.theme.default.css' %}">
@@ -9,23 +9,23 @@
 {% block main_text %}
     <div class="container-layout">
         <section>
-            <header id="header-banner-brand" class="header-{{brand_name}}">{{brand_name}}</header>
+            <header id="header-banner-brand" class="header-{{brand}}">{{brand.brand_name}}</header>
             <div class="container-content">
-                <p class="content-blurb">{{blurb_content}}</p>
+                <p class="content-blurb">{{brand.content_blurb}}</p>
                 <div class="grid-flex row no-gutter mt-5">
                     <div class="col-12 col-md-6 order-1">
-                        <h3 class="header-title">About {{brand_owner}}</h3>
+                        <h3 class="header-title">About {{brand.brand_owner}}</h3>
                         {% block content_owner %}{% endblock content_owner %}
                     </div>
                     <div class="col-12 col-md-6 align-self-center order-2">
-                        <img src="{% block image_owner %}{% endblock image_owner %}" alt="About {{brand_owner}} Image">
+                        <img src="{% block image_owner %}{% endblock image_owner %}" alt="About {{brand.brand_owner}} Image">
                     </div>
                     <div class="col-12 col-md-6 push-md-6 order-3 order-md-4">
-                        <h3 class="header-title">{{brand_name}} Goals</h3>
+                        <h3 class="header-title">{{brand.brand_name}} Goals</h3>
                         {% block content_brand %}{% endblock content_brand %}
                     </div>
                     <div class="col-12 col-md-6 pull-md-6 align-self-center order-4 order-md-3">
-                        <img src="http://via.placeholder.com/640x360" alt="{{brand_name}} Goals Image">
+                        <img src="http://via.placeholder.com/640x360" alt="{{brand.brand_name}} Goals Image">
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
         <section>
             <div class="container-content">
                 <div class="link-main-active text-center">
-                    <a href="{{brand_url}}" target="_blank">Visit {{brand_name}}</a>
+                    <a href="{{brand.site_url}}" target="_blank">Visit {{brand.brand_name}}</a>
                 </div>
             </div>
         </section>

@@ -1,0 +1,48 @@
+/******************************************
+    Set Certain Width Sizes
+******************************************/
+
+.w {
+	@media screen and (min-width:768px) {
+		&-md-25 {
+			width:25% !important;
+		}
+		&-md-50 {
+			width:50% !important;
+		}
+		&-md-75 {
+			width:75% !important;
+		}
+		&-md-100 {
+			width:100% !important;
+		}
+	}
+	@media screen and (min-width:992px) {
+		&-lg-25 {
+			width:25% !important;
+		}
+		&-lg-50 {
+			width:50% !important;
+		}
+		&-lg-75 {
+			width:75% !important;
+		}
+		&-lg-100 {
+			width:100% !important;
+		}
+	}
+	@media screen and (min-width:1200px) {
+		&-xl-25 {
+			width:25% !important;
+		}
+		&-xl-50 {
+			width:50% !important;
+		}
+		&-xl-75 {
+			width:75% !important;
+		}
+		&-xl-100 {
+			width:100% !important;
+		}
+	}
+}

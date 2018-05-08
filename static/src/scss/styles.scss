@@ -1,6 +1,4 @@
 @import "_variables";
-@import "_typography";
-@import "_buttons";
 
 body {
     color: $color-primary;
@@ -13,6 +11,26 @@ img {
     max-width:100%;
     height:auto;
 }
+.navbar {
+    width:100%;
+    background-color:white;
+}
+.navbar-brand {
+    img {
+        height:65px;
+    }
+    @media screen and (min-width:768px) {
+        img {
+            height:75px;
+        }
+    }
+    @media screen and (min-width:992px) {
+        img {
+            height:100px;
+        }
+    }
+}
+
 .column {
     padding:15px;
     &-left {
@@ -64,6 +82,7 @@ img {
         }
     }
     @media screen and (min-width:1200px) {
+        padding:50px;
         width:1100px;
     }
     @media screen and (min-width:1980px) {
@@ -80,11 +99,15 @@ img {
         font-size: $text-xlarge;
     }
     @media screen and (min-width:1200px) {
-        height: 300px;
-        padding:0px;
-
         h1 {
             font-size: $text-xnlarge-three;
+        }
+    }
+    @media screen and (min-width:1900px) {
+        padding:50px;
+
+        h1 {
+            font-size: $text-xnlarge-four;
         }
     }
 }
@@ -231,3 +254,7 @@ footer {
         }
     }
 }
+
+@import "_width";
+@import "_typography";
+@import "_buttons";

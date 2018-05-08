@@ -20,13 +20,14 @@ class BrandTestimonialAdmin(admin.ModelAdmin):
 class EmployeeAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'position','display_order', 'active','created')
     search_fields = ['first_name', 'last_name']
+    save_as = True
 
     class meta:
         model = Employee
 
 class WarriorMediaImageAdmin(admin.ModelAdmin):
     list_display = ('name', 'title', 'description','active')
-
+    save_as = True
     class meta:
         model = WarriorMediaImage
 

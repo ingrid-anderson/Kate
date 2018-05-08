@@ -20,16 +20,16 @@
                 <p class="content-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc imperdiet suscipit tristique. Cras sed metus id
                     neque tristique sodales. Cras efficitur eu est sit amet dapibus. Nulla sed nulla luctus, malesuada lectus
                     et, eleifend turpis. Cras non leo tellus.</p>
-                <div class="row no-gutter">
+                <div class="row no-gutter justify-content-center mt-md-5">
                     {% for warrior in warriors %}
-                    <div class="col-6 col-md-4 col-lg-3">
-                        {% if warrior.image %}
-                        <img class="img-fluid" src="{{ warrior.image.url }}" alt="{{ warrior.name.url }}">
+                    <div class="col-6 col-md-4 col-lg-3 text-center">
+                        {% if warrior.image and warrior.image != None %}
+                        <img class="img-fluid w-50" src="{{ warrior.image.url }}" alt="{{ warrior.name.url }}">
                         {% else %}
-                        <img class="img-fluid" src="{% static 'images/Assets/generic-user.png' %}" alt="{{ warrior.name }}">
+                        <img class="img-fluid w-50" src="{% static 'images/Assets/generic-user.png' %}" alt="{{ warrior.name }}">
                         {% endif %}
-                        <div class="team-member">
-                            <span class="d-block member-name">{{ warrior.first_name }} {{ warrior.last_name }}</span>
+                        <div class="team-member mt-1 mt-md-3 mb-5">
+                            <span class="d-block nember-name">{{ warrior.first_name }} {{ warrior.last_name }}</span>
                             <span class="d-block member-position">{{ warrior.position }}</span>
                         </div>
                     </div>
@@ -43,43 +43,29 @@
                 <p class="content-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc imperdiet suscipit tristique. Cras sed metus id
                     neque tristique sodales. Cras efficitur eu est sit amet dapibus. Nulla sed nulla luctus, malesuada lectus
                     et, eleifend turpis. Cras non leo tellus.</p>
-                <div class="row">
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
+                <div class="d-none d-lg-block ">
+                    <div class="row justify-content-center">
+                        {% for image in images %}
+                            {% if image.image and image.image != None %}
+                            <div class="col-lg-4 text-center mb-3">
+                                <img class="img-fluid" src="{{ image.image.url }}" alt="{{ image.name }}" title="{{ image.title }}">
+                            </div>
+                            {% endif %}
+                        {% endfor %}
                     </div>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
+                </div>
+                <div class="imageCarousel owl-carousel owl-theme d-sm-block d-lg-none">
+                {% for image in images %}
+                    {% if image.image and image.image != None %}
+                    <div class="item">
+                        <img class="img-fluid" src="{{ image.image.url }}" alt="{{ image.name }}" title="{{ image.title }}">
+                        <div>
+                            <span>{{ image.title }}</span><br>
+                            <span class="font-italic">{{ image.description }}</span>
+                        </div>
                     </div>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <img src="http://via.placeholder.com/254x169" alt="Life At Warrior Media">
-                    </div>
+                    {% endif %}
+                {% endfor %}
                 </div>
             </div>
         </section>
@@ -117,6 +103,19 @@
             dotData:true,
             items:1,
             onTranslated: updateCarousel,
+        });
+
+        let imageCarousel = $('.imageCarousel');
+        imageCarousel.owlCarousel({
+            loop:true,
+            dots:true,
+            items:1,
+            responsive: {
+                768 : {
+                    items:3,
+                    margin:15
+                }
+            }
         });
 
         // Add Click Event Listener to WARRIORS span text
