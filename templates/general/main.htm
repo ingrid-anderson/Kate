@@ -6,7 +6,7 @@
         <div class="row no-gutters text-center justify-content-center">
             <section class="col-12 col-md-7 col-lg-6 col-xl-5 order-2 order-md-1 align-self-center">
                 <h1>Warrior Media Inc.</h1>
-                <p>Warrior Media's awesome incredible tagline that goes here</p>
+                <p>We Build Brands That Change The World!</p>
             </section>
             <section class="col-12 col-md-4 col-lg-3 col-xl-2 order-1 order-md-2 align-self-center">
                 <img class="img-fluid w-25 w-md-50 w-lg-50" src="{% static 'images/Assets/logo/WM-Logo-White.png' %}" alt="Warrior Media Inc.">
@@ -17,14 +17,17 @@
     <div class="container-layout">
         <section>
             <div class="container-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla placerat ex dapibus arcu feugiat, a suscipit metus vehicula. Aliquam ultrices, ipsum non vestibulum hendrerit, velit leo pretium diam, a sagittis odio nibh sit amet tortor. Suspendisse quis nulla quam. Quisque aliquet lacus augue, vel tristique ex viverra vitae. Vestibulum placerat sapien at arcu feugiat ornare. Duis non sapien in velit pretium pretium quis id magna. </p>
-              
+                <p>Warrior Media was founded to help the people live a healthier and happier life. Our main goal, what we call, "The Million Member Mission" is to get 1,000,000 people to commit to transforming their health through choosing to be a member of one of our health brands. By doing this, we will create a profitable company while also positively impacting the world for the better.</p>
+                <p>When people ask us what we do, it's often hard to describe. So... in a nutshell, we are a health publishing company with a focus on using cutting edge technology and content based marketing to create brands that will help people transform their bodies and lives!</p>
+                <p>Our goal is to disrupt the publishing industry by changing the publishing paradigm from signing a book deal and distributing and marketing a person's ideas until the public moves on, to creating a lasting community around the people and ideas we choose to publish.</p>
+                <p>At Warrior Media we not only build books, we build video courses, create high value membership programs, host live events and even curate high level coaching. Then... we make our brand known through content marketing on our own websites and using the most current social media platforms.</p>
+                <p>Our aim is to do everything from start to finish so we can ensure that the people and ideas we select to publish last the test of time. Bottom line is... we're trying to build communities that positively affect the world!</p>            
             </div>
         </section>
         <section>
             <header id="header-banner-brand">Our Brands</header>
             <div class="container-content">
-                <p class="content-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc imperdiet suscipit tristique. Cras sed metus id neque tristique sodales. Cras efficitur eu est sit amet dapibus. Nulla sed nulla luctus, malesuada lectus et, eleifend turpis. Cras non leo tellus. </p>
+                <p class="content-blurb">All of Warrior Media's brands are focussed on improving the lives of people by teaching them how to live a healthier and happier life. Our goal is to help people become pain free, to learn how to cook healthy meals in a way that is easy and delicious and to learn to exercise from the comfort of their own home in a way that is non-intimidating. Take a look at some of our brands below to see examples of the communities we build...</p>
                 <div class="grid-flex row">
                     {% for brand in brands %}
                     <div class="col-12 col-md-4">
@@ -39,6 +42,7 @@
                 </div>
             </div>
         </section>
+        <!--
         <section>
             <header id="header-banner-about">About Us</header>
             <div class="container-content">
@@ -51,7 +55,6 @@
                     <div class="column-left col-12 col-md-6 align-self-center order-md-1">
                         <img src="http://via.placeholder.com/640x360" alt="Our Team">
                     </div>
-                
                 </div>
                 <div class="row">
                     <div class="column-left col-12 col-md-6 order-2 order-md-2 align-self-center">
@@ -86,41 +89,15 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
         <section>
-            <header id="header-banner-contact">Contact</header>
+            <header id="header-banner">Curious To Learn More?</header>
             <div class="container-content">
-                <p class="content-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc imperdiet suscipit tristique. Cras sed metus id neque tristique sodales. Cras efficitur eu est sit amet dapibus. Nulla sed nulla luctus, malesuada lectus et, eleifend turpis. Cras non leo tellus. </p>
-                <div class="row no-gutters">
-                    <div class="col-12 col-md-8">
-                        <h3>Contact Us:</h3>
-
-                        <form role="form" action="" method="post">
-                            {% csrf_token %}
-                            {{ form.as_p }}
-                            <button type="submit">Submit</button>
-                        </form>
-
-
-                        <!-- <form action="">
-                            <input type="text" name="first_name" placeholder="First Name">
-                            <input type="text" name="last_name" placeholder="Last Name">
-                            <input type="text" name="email" placeholder="Email">
-                            <input type="text" name="subject" placeholder="Subject">
-                            <input type="text" name="message" placeholder="Message">
-                        </form>
-                        <a href="learnmore">Submit</a> -->
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <img src="http://via.placeholder.com/640x360" alt="Our Team">
-                        <div>
-                            <p>Warrior Media, Inc.<br>
-                            Address Line 1<br>
-                            City, State, Zip<br>
-                            Phone Number</p>
-                        </div>
-                    </div>
-                    </div>
+                <p>As stated above, our main goal is what we call, "The Million Member Mission." This is for us to get 1,000,000 people to commit to transforming their health through choosing to be a member of one of our health brands. We know that by doing this, we will create a profitable company while also positively impacting the world for the better.</p>
+                <p>However, we also know that achieving this goal requires that we have a "Team Of Warriors" who are dedicated to our cause. Which is why, Warrior Media is always looking for smart and hard working individuals who are drawn to the idea of helping us grow our company so we can achieve our mission of helping more people live a healthy and happy life.</p>
+                <p>So...if you're a team player, if you love health and fitness and if you are attracted to the idea of working for a company that is dedicated to creating a positive impact in the world then the next step is to learn more about who we are by clicking the link below...</p>
+                <div class="link-main-active text-center">
+                    <a href="{% url 'general:about' %}">Learn More About Who We Are</a>
                 </div>
             </div>
         </section>

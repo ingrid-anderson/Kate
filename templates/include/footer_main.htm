@@ -1,17 +1,6 @@
 {% load staticfiles %}
 
 <footer>
-    <section class="social-media">
-        <a href="https://www.linkedin.com/" target="_blank">
-            <img class="img-fluid" src="{% static 'images/Assets/socialmedia/linkedin/White/In-White-75px-R.png' %}" title="LinkedIn" alt="LinkedIn">
-        </a>
-        <a href="https://www.facebook.com/" target="_blank">
-            <img class="img-fluid" src="{% static 'images/Assets/socialmedia/facebook/flogo-HexRBG-Wht-72.png' %}" title="Facebook" alt="Facebook">
-        </a>
-        <a href="https://www.twitter.com/" target="_blank">
-            <img class="img-fluid" src="{% static 'images/Assets/socialmedia/twitter/Twitter_Social_Icon_Square_White.png' %}" title="Twitter" alt="Twitter">
-        </a>
-    </section>
     <section class="footer-content">
         <div>
             &copy; Warrior Media Inc. 2018
@@ -19,6 +8,11 @@
         <div>
             <a href="{% url 'general:term' %}">Terms of Use</a> -
             <a href="{% url 'general:privacy' %}">Privacy Policy</a>
+        </div>
+        <div>
+            <a href="https://www.linkedin.com/" target="_blank">
+                <img class="img-fluid" src="{% static 'images/Assets/socialmedia/linkedin/White/Logo-White-21px-R.png' %}" title="LinkedIn" alt="LinkedIn">
+            </a>
         </div>
     </section>
 </footer>

@@ -51,9 +51,6 @@ img {
     @media screen and (min-width:1200px) {
         width:1200px;
     }
-    @media screen and (min-width:1980px) {
-        width:1980px;
-    }
 }
 .container-content {
     // margin:15px auto 0px;
@@ -74,7 +71,7 @@ img {
         text-align:center;
     }
     @media screen and (min-width:992px) {
-        width:900px;
+        width:1000px;
         padding:25px 75px;
         margin:0 auto;
         p {
@@ -83,10 +80,6 @@ img {
     }
     @media screen and (min-width:1200px) {
         padding:50px;
-        width:1100px;
-    }
-    @media screen and (min-width:1980px) {
-        width:1400px;
     }
 }
 .header-top {
