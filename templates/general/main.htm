@@ -28,22 +28,30 @@
             <header id="header-banner-brand">Our Brands</header>
             <div class="container-content">
                 <p class="content-blurb">All of Warrior Media's brands are focussed on improving the lives of people by teaching them how to live a healthier and happier life. Our goal is to help people become pain free, to learn how to cook healthy meals in a way that is easy and delicious and to learn to exercise from the comfort of their own home in a way that is non-intimidating. Take a look at some of our brands below to see examples of the communities we build...</p>
-                <div class="grid-flex row">
-                    {% for brand in brands %}
-                    <div class="col-12 col-md-4">
-                        <h3 class="title-brand">{{ brand.brand_name }}</h3>
-                        <img class="img-fluid" src="{{ brand.image_thumbnail.url }}" alt="{{ brand.brand_name }}">
-                        <p class="content-brand">{{brand.content_blurb}}</p>
-                        <div class="link-main-active">
-                            <a href="{% url 'general:brands' slug=brand.slug %}">Learn More</a>
-                        </div>
-                    </div>  
-                    {% endfor %}
-                </div>
             </div>
+            {% for brand in brands %}
+            <div class="grid-flex row p-4">
+                {% if forloop.counter|divisibleby:"2" %}
+                <div class="column-right col-12 col-md-6 order-md-2">
+                    <h3 class="title-brand">{{ brand.brand_name }}</h3>
+                    <p class="content-brand">{{brand.content_blurb}}</p>
+                </div>
+                <div class="column-left col-12 col-md-6 align-self-center order-md-1">
+                    <img class="img-fluid" src="{{ brand.image_thumbnail.url }}" alt="{{ brand.brand_name }}">
+                </div>
+                {% else %}
+                <div class="column-left col-12 col-md-6 order-2 order-md-2 align-self-center">
+                    <img class="img-fluid" src="{{ brand.image_thumbnail.url }}" alt="{{ brand.brand_name }}">
+                </div>
+                <div class="column-right col-12 col-md-6 order-1 order-md-1">
+                    <h3 class="title-brand">{{ brand.brand_name }}</h3>
+                    <p class="content-brand">{{brand.content_blurb}}</p>
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
         </section>
-        <!--
-        <section>
+        <!-- <section>
             <header id="header-banner-about">About Us</header>
             <div class="container-content">
                 <p class="content-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc imperdiet suscipit tristique. Cras sed metus id neque tristique sodales. Cras efficitur eu est sit amet dapibus. Nulla sed nulla luctus, malesuada lectus et, eleifend turpis. Cras non leo tellus. </p>
@@ -69,7 +77,7 @@
                     <a href="{% url 'general:about' %}">Find Out More</a>
                 </div>
             </div>
-        </section>
+        </section> 
         <section>
             <header id="header-banner-join">Join Our Team</header>
             <div class="container-content">
