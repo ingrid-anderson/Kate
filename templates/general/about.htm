@@ -19,7 +19,7 @@
                         {% for image in images %}
                             {% if image.image and image.image != None %}
                             <div class="col-lg-4 text-center mb-3">
-                                <img class="img-fluid" src="{{ image.image.url }}" alt="{{ image.name }}" title="{{ image.title }}">
+                                <img class="img-fluid img-thumbnail" src="{{ image.image.url }}" alt="{{ image.name }}" title="{{ image.title }}">
                             </div>
                             {% endif %}
                         {% endfor %}
@@ -29,8 +29,8 @@
                 {% for image in images %}
                     {% if image.image and image.image != None %}
                     <div class="item">
-                        <img class="img-fluid" src="{{ image.image.url }}" alt="{{ image.name }}" title="{{ image.title }}">
-                        <div>
+                        <img class="img-fluid img-thumbnail" src="{{ image.image.url }}" alt="{{ image.name }}" title="{{ image.title }}">
+                        <div class="text-center">
                             <span>{{ image.title }}</span><br>
                             <span class="font-italic">{{ image.description }}</span>
                         </div>
@@ -43,15 +43,32 @@
         <section>
             <div class="container-content">
                 <h2 class="text-center">Here's Our Team Of Warriors</h2>
-                <div class="row no-gutter justify-content-center mt-md-5">
+                <div class="warrior-team row no-gutter justify-content-center mt-md-5">
+                    {% for leader in warriors_leaders %}
+                    <div class="col-6 col-md-4 col-lg-3  mb-3 text-center">
+                        <div class="member-img">
+                            {% if leader.image and leader.image != None %}
+                            <img class="img-fluid" src="{{ leader.image.url }}" alt="{{ leader.name.url }}">
+                            {% else %}
+                            <img class="img-fluid" src="{% static 'images/Assets/generic-user.png' %}" alt="{{ leader.name }}">
+                            {% endif %}
+                        </div>
+                        <div class="mt-1 mt-md-3">
+                            <span class="d-block nember-name">{{ leader.first_name }} {{ leader.last_name }}</span>
+                            <span class="d-block member-position">{{ leader.position }}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
                     {% for warrior in warriors %}
-                    <div class="col-6 col-md-4 col-lg-3 text-center">
-                        {% if warrior.image and warrior.image != None %}
-                        <img class="img-fluid w-50" src="{{ warrior.image.url }}" alt="{{ warrior.name.url }}">
-                        {% else %}
-                        <img class="img-fluid w-50" src="{% static 'images/Assets/generic-user.png' %}" alt="{{ warrior.name }}">
-                        {% endif %}
-                        <div class="team-member mt-1 mt-md-3 mb-5">
+                    <div class="col-6 col-md-4 col-lg-3 mb-3 text-center">
+                        <div class="member-img">
+                            {% if warrior.image and warrior.image != None %}
+                            <img class="img-fluid" src="{{ warrior.image.url }}" alt="{{ warrior.name.url }}">
+                            {% else %}
+                            <img class="img-fluid" src="{% static 'images/Assets/generic-user.png' %}" alt="{{ warrior.name }}">
+                            {% endif %}
+                        </div>
+                        <div class="mt-1 mt-md-3">
                             <span class="d-block nember-name">{{ warrior.first_name }} {{ warrior.last_name }}</span>
                             <span class="d-block member-position">{{ warrior.position }}</span>
                         </div>
@@ -67,15 +84,15 @@
                 <div class="link-main-active text-center">
                     <a href="https://www.indeed.com/" title="Indeed" target="_blank">Join Us</a>
                 </div>
-                <div class="row no-gutter">
+                <div class="row">
                     <div class="col-12 col-md-4">
-                        <img src="http://via.placeholder.com/640x360" alt="Our Team">
+                        <img class="img-fluid img-thumbnail" src="{% static 'images/IMG_Office_View_Downtown_BW.jpg' %}" alt="Downtown Santa Cruz">
                     </div>
                     <div class="col-12 col-md-4">
-                        <img src="http://via.placeholder.com/640x360" alt="Our Team">
+                        <img class="img-fluid img-thumbnail" src="{% static 'images/IMG_Office_WM_Sign.jpg' %}" alt="Warrior Media">
                     </div>
                     <div class="col-12 col-md-4">
-                        <img src="http://via.placeholder.com/640x360" alt="Our Team">
+                        <img class="img-fluid img-thumbnail" src="{% static 'images/IMG_Office_Message.jpg' %}" alt="The Best View Comes After The Hardest Climb">
                     </div>
                 </div>
             </div>
@@ -99,8 +116,13 @@
             loop:true,
             dots:true,
             items:1,
+            nav:true,
             responsive: {
                 768 : {
+                    items:2,
+                    margin:15
+                },
+                992 : {
                     items:3,
                     margin:15
                 }

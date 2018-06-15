@@ -3,7 +3,7 @@ from time import gmtime, strftime
 
 def upload_location(instance, filename):
 	date = strftime("%Y/%m", gmtime())
-	return 'products/{0}/{1}'.format(date, filename)
+	return 'images/{0}/{1}'.format(date, filename)
 
 # Create your models here.
 class Brand(models.Model):
@@ -51,8 +51,20 @@ class Employee(models.Model):
                     blank=True,
                 )
     created = models.DateTimeField(auto_now=False, auto_now_add=True)
-    display_order = models.PositiveIntegerField(default=25)
+    executive = models.BooleanField(default=False)
+    DEPARTMENT_CHOICES = (
+        ('None', 'Not Applicable'),
+        ('Accounting', 'Accounting'),
+        ('Content', 'Content'),
+        ('Customer Experience', 'Customer Experience'),
+        ('Marketing', 'Marketing'),
+        ('Operations', 'Operations'),
+        ('Production', 'Production'),
+        ('Tech', 'Tech'),
+    )
 
+    department = models.CharField(max_length=50, choices=DEPARTMENT_CHOICES, default="Not Applicable")    
+    display_order = models.PositiveIntegerField(default=25)
     active = models.BooleanField(default=True)
 
     def __unicode__(self):
@@ -70,7 +82,7 @@ class WarriorMediaImage(models.Model):
                     null=True,
                     blank=True,
                 )
-    active = models.BooleanField(default=False)
+    active = models.BooleanField(default=True)
     display_order = models.PositiveIntegerField(default=50)
 
     def __unicode__(self):

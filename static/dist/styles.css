@@ -14,6 +14,9 @@ img {
   width: 100%;
   background-color: white; }
 
+.navbar-nav .nav-item {
+  margin: 0px 10px; }
+
 .navbar-brand img {
   height: 65px; }
 
@@ -29,7 +32,8 @@ img {
   padding: 15px; }
 
 .container-main {
-  background-color: #e1e1e1; }
+  background-color: #e1e1e1;
+  line-height: 1.75em; }
 
 .container-layout {
   background-color: white;
@@ -39,8 +43,7 @@ img {
       width: 1200px; } }
 
 .container-content {
-  padding: 10px 35px 15px;
-  line-height: 1.75em; }
+  padding: 10px 35px 15px; }
   .container-content > div {
     margin-top: 25px; }
   .container-content > h2, .container-content h3 {
@@ -120,8 +123,8 @@ img {
       height: 250px;
       font-size: 3em; } }
 
-.grid-flex > div {
-  margin-bottom: 45px; }
+.title-brand {
+  font-size: 2em; }
 
 @media screen and (min-width: 768px) {
   .grid-flex > div {
@@ -133,9 +136,6 @@ img {
 
 .warrior-ethos-block {
   margin: 25px 0 !important; }
-  @media screen and (min-width: 768px) {
-    .warrior-ethos-block {
-      margin: 75px 0 !important; } }
 
 .warrior-ethos {
   font-size: 1em;
@@ -162,6 +162,15 @@ img {
   @media screen and (min-width: 768px) {
     .warrior-ethos-text {
       margin-top: 75px; } }
+
+.warrior-team .member-img {
+  min-height: 175px;
+  display: flex;
+  align-items: flex-end; }
+
+@media screen and (min-width: 768px) {
+  .warrior-team .member-img {
+    min-height: 250px; } }
 
 footer {
   text-align: center;

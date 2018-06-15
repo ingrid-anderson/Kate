@@ -1,5 +1,5 @@
 {% load staticfiles %}
-<nav class="navbar navbar-toggleable-md navbar-light">
+<nav class="container navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand navbar-link" href="{% url 'general:home' %}">
         <img src="{% static 'images/Assets/logo/WM-Logo-Left-Black.png' %}" alt="Warrior Media Inc.">
     </a>
@@ -7,13 +7,11 @@
     <span><i class="fa home" aria-hidden="true" id="bars"></i></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
+    <div class="collapse navbar-collapse float-right" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto text-center text-md-left">
             <li id="nav-home" class="nav-item"><a class="nav-link" href="{% url 'general:home' %}">Home</a></li>
-            <li id="nav-brands" class="nav-item"><a class="nav-link" href="#header-banner-brand">Brands</a></li>
-            <li id="nav-about" class="nav-item"><a class="nav-link" href="#header-banner-about">About</a></li>
-            <li id="nav-join" class="nav-item"><a class="nav-link" href="#header-banner-join">Join Us</a></li>
-            <li id="nav-contact" class="nav-item"><a class="nav-link" href="#header-banner-contact">Contact</a></li>
+            <li id="nav-brands" class="nav-item"><a class="nav-link" href="{% url 'general:home' %}#our-brands">Brands</a></li>
+            <li id="nav-about" class="nav-item"><a class="nav-link" href="{% url 'general:home' %}#about-us">Curious?</a></li>
         </ul>
     </div>
 </nav>

@@ -21,85 +21,38 @@
                 <p>When people ask us what we do, it's often hard to describe. So... in a nutshell, we are a health publishing company with a focus on using cutting edge technology and content based marketing to create brands that will help people transform their bodies and lives!</p>
                 <p>Our goal is to disrupt the publishing industry by changing the publishing paradigm from signing a book deal and distributing and marketing a person's ideas until the public moves on, to creating a lasting community around the people and ideas we choose to publish.</p>
                 <p>At Warrior Media we not only build books, we build video courses, create high value membership programs, host live events and even curate high level coaching. Then... we make our brand known through content marketing on our own websites and using the most current social media platforms.</p>
-                <p>Our aim is to do everything from start to finish so we can ensure that the people and ideas we select to publish last the test of time. Bottom line is... we're trying to build communities that positively affect the world!</p>            
+                <p>Our aim is to do everything from start to finish so we can ensure that the people and ideas we select to publish last the test of time. Bottom line is... we're trying to build communities that positively affect the world!</p>
             </div>
         </section>
-        <section>
+        <section id="our-brands">
             <header id="header-banner-brand">Our Brands</header>
             <div class="container-content">
                 <p class="content-blurb">All of Warrior Media's brands are focussed on improving the lives of people by teaching them how to live a healthier and happier life. Our goal is to help people become pain free, to learn how to cook healthy meals in a way that is easy and delicious and to learn to exercise from the comfort of their own home in a way that is non-intimidating. Take a look at some of our brands below to see examples of the communities we build...</p>
             </div>
             {% for brand in brands %}
-            <div class="grid-flex row p-4">
+            <div class="grid-flex row no-gutters justify-content-center align-items-center p-4">
                 {% if forloop.counter|divisibleby:"2" %}
-                <div class="column-right col-12 col-md-6 order-md-2">
-                    <h3 class="title-brand">{{ brand.brand_name }}</h3>
-                    <p class="content-brand">{{brand.content_blurb}}</p>
+                <h3 class="title-brand text-center col-12">{{ brand.brand_name }}</h3>
+                <div class="column-right col-12 col-md-6 order-2">
+                    <p class="content-brand p-3">{{brand.content_blurb}}</p>
                 </div>
-                <div class="column-left col-12 col-md-6 align-self-center order-md-1">
+                <div class="column-left col-12 col-md-6 align-self-center order-1">
                     <img class="img-fluid" src="{{ brand.image_thumbnail.url }}" alt="{{ brand.brand_name }}">
                 </div>
                 {% else %}
-                <div class="column-left col-12 col-md-6 order-2 order-md-2 align-self-center">
+                <h3 class="title-brand text-center col-12">{{ brand.brand_name }}</h3>
+                <div class="column-left col-12 col-md-6 order-1 order-md-2 align-self-center">
                     <img class="img-fluid" src="{{ brand.image_thumbnail.url }}" alt="{{ brand.brand_name }}">
                 </div>
-                <div class="column-right col-12 col-md-6 order-1 order-md-1">
-                    <h3 class="title-brand">{{ brand.brand_name }}</h3>
-                    <p class="content-brand">{{brand.content_blurb}}</p>
+                <div class="column-right col-12 col-md-6 order-2 order-md-1">
+                    <p class="content-brand p-3">{{brand.content_blurb}}</p>
                 </div>
                 {% endif %}
             </div>
             {% endfor %}
         </section>
-        <!-- <section>
-            <header id="header-banner-about">About Us</header>
-            <div class="container-content">
-                <p class="content-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc imperdiet suscipit tristique. Cras sed metus id neque tristique sodales. Cras efficitur eu est sit amet dapibus. Nulla sed nulla luctus, malesuada lectus et, eleifend turpis. Cras non leo tellus. </p>
-                <div class="row">
-                    <div class="column-right col-12 col-md-6 order-md-2">
-                        <h3 class="title-brand">Our Team</h3>
-                        <p class="content-brand">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet a arcu vel elementum. Integer suscipit consequat volutpat. Aenean libero lorem, ultricies id egestas eu, sagittis sit amet libero. Vestibulum metus sem, eleifend a risus at, imperdiet volutpat diam.</p>
-                    </div>
-                    <div class="column-left col-12 col-md-6 align-self-center order-md-1">
-                        <img src="http://via.placeholder.com/640x360" alt="Our Team">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="column-left col-12 col-md-6 order-2 order-md-2 align-self-center">
-                        <img src="http://via.placeholder.com/640x360" alt="Our Work">
-                    </div>
-                    <div class="column-right col-12 col-md-6 order-1 order-md-1">
-                        <h3 class="title-brand">Our Work</h3>
-                        <p class="content-brand">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet a arcu vel elementum. Integer suscipit consequat volutpat. Aenean libero lorem, ultricies id egestas eu, sagittis sit amet libero. Vestibulum metus sem, eleifend a risus at, imperdiet volutpat diam.</p>
-                    </div>
-                </div>
-                <div class="link-main-active text-center">
-                    <a href="{% url 'general:about' %}">Find Out More</a>
-                </div>
-            </div>
-        </section> 
-        <section>
-            <header id="header-banner-join">Join Our Team</header>
-            <div class="container-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc imperdiet suscipit tristique. Cras sed metus id neque tristique sodales. Cras efficitur eu est sit amet dapibus. Nulla sed nulla luctus, malesuada lectus et, eleifend turpis. Cras non leo tellus. </p>
-                <div class="link-main-active text-center">
-                    <a href="https://www.indeed.com/" title="Indeed" target="_blank">Join Us</a>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <img src="http://via.placeholder.com/640x360" alt="Our Team">
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <img src="http://via.placeholder.com/640x360" alt="Our Team">
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <img src="http://via.placeholder.com/640x360" alt="Our Team">
-                    </div>
-                </div>
-            </div>
-        </section>-->
-        <section>
-            <header id="header-banner">Curious To Learn More?</header>
+        <section id="about-us">
+            <header id="header-banner-about">Curious To Learn More?</header>
             <div class="container-content">
                 <p>As stated above, our main goal is what we call, "The Million Member Mission." This is for us to get 1,000,000 people to commit to transforming their health through choosing to be a member of one of our health brands. We know that by doing this, we will create a profitable company while also positively impacting the world for the better.</p>
                 <p>However, we also know that achieving this goal requires that we have a "Team Of Warriors" who are dedicated to our cause. Which is why, Warrior Media is always looking for smart and hard working individuals who are drawn to the idea of helping us grow our company so we can achieve our mission of helping more people live a healthy and happy life.</p>

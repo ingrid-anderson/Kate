@@ -43,9 +43,12 @@ def general_about(request):
     context = {}
     warriors = Employee.objects.filter(active=True).order_by('display_order','last_name')
     print("EMPLOYEE OBJ : ", warriors)
-    warriors = Employee.objects.filter(active=True).order_by('display_order','last_name')
+    # Filter out Executives from Employees object
+    warriors_leaders = Employee.objects.filter(active=True, executive=True).order_by('display_order')
+    warriors = Employee.objects.filter(active=True, executive=False).order_by('department','display_order','first_name')
     images = WarriorMediaImage.objects.filter(active=True).order_by('display_order')[:25]
     context.update({
+        "warriors_leaders":warriors_leaders,
         "warriors": warriors,
         "images": images,
     })
