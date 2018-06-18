@@ -109,16 +109,16 @@ WSGI_APPLICATION = 'wm.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "WarriorMedia",
-        "USER": "warriormedai",
-        "PASSWORD": "mai12345!",
-        "HOST": "localhost",
-        "PORT": "5432",
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql_psycopg2",
+#         "NAME": "WarriorMedia",
+#         "USER": "warriormedai",
+#         "PASSWORD": "mai12345!",
+#         "HOST": "localhost",
+#         "PORT": "5432",
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -152,6 +152,12 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Database
+# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES = {'default': {}}
+DATABASES['default'].update(db_from_env)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
