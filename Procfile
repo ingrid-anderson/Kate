@@ -1,1 +1,1 @@
-web: run-program gunicorn wm.wsgi
+web: gunicorn wm.wsgi
