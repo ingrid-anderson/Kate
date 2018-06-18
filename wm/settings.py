@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'general',
+    'storages',
     # 'compressor',
 ]
 
@@ -163,5 +164,8 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
 MEDIA_ROOT  = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
 
 
-print("MEDIA_ROOT", MEDIA_ROOT)
-print("STATIC_ROOT", STATIC_ROOT)
+
+from wm.aws.conf import *
+
+# print("MEDIA_ROOT", MEDIA_ROOT)
+# print("STATIC_ROOT", STATIC_ROOT)
