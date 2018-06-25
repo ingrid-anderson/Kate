@@ -24,7 +24,7 @@ SECRET_KEY = '507fee1d-5885-45b6-96a5-6315cf0154fd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [kate-alm.herokuapp.com]
+ALLOWED_HOSTS = ['kate-alm.herokuapp.com']
 
 
 # Application definition
