@@ -1,17 +1,50 @@
 {% load staticfiles %}
-<nav class="container navbar navbar-expand-lg navbar-light">
+{% url 'general:home' as about_url %}
+{% url 'general:immersion' as immersion_url %}
+{% url 'general:summer' as summer_url %}
+{% url 'general:school_year' as school_year_url %}
+{% url 'general:programs' as programs_url %}
+<nav class="navbar navbar-fixed-top navbar-dark navbar-expand-lg container-fluid">
     <a class="navbar-brand navbar-link" href="{% url 'general:home' %}">
-        <img src="{% static 'images/Assets/logo/WM-Logo-Left-Black.png' %}" alt="Warrior Media Inc.">
+        <header class="header-top">
+        <div class="row no-gutters text-center justify-content-center">
+            <section class="col-12 col-md-7 col-lg-6 col-xl-5 order-2 order-md-1 align-self-center">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+                {% if request.path == about_url %}
+                <h1 class="d-none d-lg-block">Kate Alm's Suzuki Studio</h1>
+                <h1 class="d-lg-none">Kate Alm</h1>
+                {% endif %}
+                {% if request.path == immersion_url %}
+                <h1>Immersion Program</h1>
+                {% endif %}
+                {% if request.path == summer_url %}
+                <h1 class="d-none d-lg-block">Summer Information</h1>
+                <h1 class="d-lg-none">Summer</h1>
+                {% endif %}
+                {% if request.path == school_year_url %}
+                <h1 class="d-none d-lg-block">School Year Information</h1>
+                <h1 class="d-lg-none">School Year</h1>
+                {% endif %}
+                {% if request.path == programs_url %}
+                <h1 class="d-none d-lg-block">Other Programs</h1>
+                <h1 class="d-lg-none">Programs</h1>
+                {% endif %}
+            </section>
+            
+        </div>
+    </header>
     </a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span><i class="fa home" aria-hidden="true" id="bars"></i></span>
+    <button class="navbar-toggler navbar-toggler-right navbar-toggler-icon" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- <span><i class="fa home" aria-hidden="true" id="bars"></i></span> -->
     </button>
 
     <div class="collapse navbar-collapse float-right" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto text-center text-md-left">
-            <li id="nav-home" class="nav-item"><a class="nav-link" href="{% url 'general:home' %}">Home</a></li>
-            <li id="nav-brands" class="nav-item"><a class="nav-link" href="{% url 'general:home' %}#our-brands">Brands</a></li>
-            <li id="nav-about" class="nav-item"><a class="nav-link" href="{% url 'general:home' %}#about-us">Curious?</a></li>
+            <li id="nav-about" class="nav-item {% if request.path == about_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:home' %}">About</a></li>
+            <li id="nav-immersion" class="nav-item {% if request.path == immersion_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:immersion' %}">Immersion</a></li>
+            <li id="nav-summer" class="nav-item {% if request.path == summer_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:summer' %}">Summer</a></li>
+            <li id="nav-school" class="nav-item {% if request.path == school_year_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:school_year' %}">School Year</a></li>
+            <li id="nav-programs" class="nav-item {% if request.path == programs_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:programs' %}">Programs</a></li>
         </ul>
     </div>
 </nav>

@@ -1,0 +1,32 @@
+{% extends "base.htm" %}
+{% load staticfiles %}
+
+{% block main_text %}
+    
+    <div class="container-layout">
+        <section>
+            <div class="container-content">
+                <p>Thank you for your interest in my 10-week Fall or Spring Suzuki Piano Immersion and Introductory Class! Before you enroll in the class, I invite you to observe one of my private and group lessons so you and your child can see with your own eyes and ears what we are doing in my studio. A document with more information about what observation looks like is linked <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/StudioPolicy.pdf" target="_blank">here</a> and below.</p> 
+                <p>The immersion program comprises 4 weeks of observing private and group lessons, and 6 weeks of short lessons. A sample schedule is linked <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/ImmersionSchedule.pdf" target="_blank">here</a> and below, as well as a description of the <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/ImmersionDescription.pdf" target="_blank">program requirements.</a></p>
+                <p>3. After you and your child have completed the Suzuki Piano Immersion and Introductory Class, you will be eligible to enroll for lessons. Enrollment is a 45 minute session in which we discuss your and your child's experience so far. Please note that the child does not attend. I answer any questions you have, and we go over the <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/StudioPolicy.pdf" target="_blank">studio policy</a>, <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/ParentResponsibilities.pdf" target="_blank">parent responsibilities</a>, and <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/CampusRules.pdf" target="_blank">campus rules</a> at the Peace United Church campus where I conduct lessons. Cost: $40. I have included those documents below as well so you can take your time with them over the course of the immersion program. However, please do read them prior to our 45-minute meeting!</p>
+            </div>
+        </section>
+        <section id="new-students">
+            <header id="banner-documents">Required Reading</header>
+            <div class="row container-content">
+                <div class="col-6 col-md-2">
+                <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/StudioPolicy.pdf" target="_blank"><img width="100%" src="{% static 'images/ImmersionThumb.jpg' %}" alt="Campus Conduct"></a></div>
+                <div class="col-6 col-md-2">
+                <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/ImmersionDescription.pdf" target="_blank"><img width="100%" src="{% static 'images/ObservationThumb.jpg' %}" alt="Campus Conduct"></a></div>
+                <div class="col-6 col-md-2">
+                <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/ImmersionSchedule.pdf" target="_blank"><img width="100%" src="{% static 'images/ScheduleThumb.jpg' %}" alt="Campus Conduct"></a></div>
+                <div class="col-6 col-md-2">
+                <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/StudioPolicy.pdf" target="_blank"><img width="100%" src="{% static 'images/StudioPolicyThumb.jpg' %}" alt="Campus Conduct"></a></div>
+                <div class="col-6 col-md-2">
+                <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/ParentResponsibilities.pdf" target="_blank"><img width="100%" src="{% static 'images/ParentRespThumb.jpg' %}" alt="Campus Conduct"></a></div>
+                <div class="col-6 col-md-2">
+                <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/CampusRules.pdf" target="_blank"><img width="100%" src="{% static 'images/ConductThumb.jpg' %}" alt="Campus Conduct"></a></div>
+            </div>
+        </section>
+    </div>
+{% endblock main_text %}
