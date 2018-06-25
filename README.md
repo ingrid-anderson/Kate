@@ -1,2 +1,2 @@
-# WarriorMedia
-Warrior Media's Main Website
+# Kate Alm
+Kate Alm's Main Website
