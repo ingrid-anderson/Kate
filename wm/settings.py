@@ -168,7 +168,7 @@ STATICFILES_DIRS    = [
 ]
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
 MEDIA_ROOT  = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
-
+#this may never work
 
 
 from wm.aws.conf import *
