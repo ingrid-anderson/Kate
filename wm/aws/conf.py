@@ -1,16 +1,15 @@
 import datetime
 import os
 
-AWS_ACCESS_KEY_ID = "AKIAIZGDP6ARV5OO4N7A"  # "AKIAI4ELCXQMLV6QIE2A"
-AWS_SECRET_ACCESS_KEY = "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"  # "HVignQ85OVOZx6SNgGLWfZfc4VHeDsSix9UVvwgY"
-#user name is django-user
-
-AWS_WOW_USERS = {
+AWS_USERS = {
     "django-user": {
-        "k": AWS_ACCESS_KEY_ID,
-        "s": AWS_SECRET_ACCESS_KEY,
+        "k": os.environ['S3_KEY_KA_PUBLIC_USER'],
+        "s": os.environ['S3_SECRET_KA_PUBLIC_USER'],
     },
 }
+
+AWS_ACCESS_KEY_ID = AWS_USERS["django-user"]["k"]
+AWS_SECRET_ACCESS_KEY = AWS_USERS["django-user"]["s"]
 
 AWS_FILE_EXPIRE = 200
 AWS_PRELOAD_METADATA = True
@@ -23,7 +22,7 @@ AWS_QUERYSTRING_AUTH = False
 
 DEFAULT_FILE_STORAGE = 'wm.aws.utils.MediaRootS3BotoStorage'
 STATICFILES_STORAGE = 'wm.aws.utils.StaticRootS3BotoStorage'
-AWS_STORAGE_BUCKET_NAME =  'ka-bucket' # 'wm-dv-static-media'
+AWS_STORAGE_BUCKET_NAME =  os.environ['AWS_STORAGE_BUCKET_NAME'] # 'wm-dv-static-media'
 # AWS_UPLOAD_USERNAME = "wm-Justin"
 # AWS_UPLOAD_GROUP = "wm-dv-group"
 S3DIRECT_REGION = 's3-us-west-2'
