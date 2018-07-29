@@ -113,6 +113,10 @@ img {
     text-align: center
 }
 
+.container-content .container-carousel {
+    padding: 10px 35px 15px;
+}
+
 @media screen and (min-width: 992px) {
     .container-content {
         width: 1000px;
@@ -121,6 +125,10 @@ img {
     }
     .container-content p {
         margin: 0px 0px 30px
+    }
+    .container-content .container-carousel {
+        width: 500px;
+        text-align: center;
     }
 }
 
@@ -185,7 +193,7 @@ img {
 #banner-new-students,
 #banner-summer,
 #banner-documents,
-#header-banner-contact {
+#header-programs {
     background-color: #99005C;
     height: 150px;
     color: white;
@@ -196,7 +204,7 @@ img {
     font-family: 'Tangerine', serif;
     font-size: 3em;
     line-height: 1.5;
-    letter-spacing: .5rem;
+    letter-spacing: .4rem;
     margin: 0 auto
 }
 

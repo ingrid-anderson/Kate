@@ -1,18 +1,33 @@
 {% extends "base.htm" %}
 {% load staticfiles %}
+{% block page_title %}Kate Alm Suzuki Studio{% endblock page_title %}
+{% block include_stylesheet %}
+    <link rel="stylesheet" href="{% static 'lib/owlCarousel/assets/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'lib/owlCarousel/assets/owl.theme.default.css' %}">
+{% endblock include_stylesheet %}
 
 {% block main_text %}
     
     <div class="container-layout">
         <section>
             <div class="container-content">
-                <p>Dear interested parent,</p>
-                <p>Thank you for your interest in Suzuki piano.</p>
-                <p>A loving, nurturing and supportive environment is the foundation of the Suzuki
-                method.</p>
-                <p>Since I first sought out training in the Suzuki method, I have been deeply gratified to be able to pass on the gift and joy of making music to my students and their families. </p>
-                <p>Even after a lifetime of immersion in music, both in my childhood home, at music school, and as a professional musician such as I have had (I am happy to forward my resume on request!), being able to teach well is not guaranteed.</p>
-                <p>I am very pleased to observe, after eleven years, and more to come, of dedicated teacher-training, that my students are playing beautifully, by ear, by reading,and in ensembles. Most importantly, I am gratified to observe that their overall their experience is joyful. I hope that you and your child can be a part of this experience.</p>
+                <div class="row">
+                    <div class="col-12 col-lg-7">
+                        <p>Dear interested parent,</p>
+                        <p>Thank you for your interest in Suzuki piano!</p>
+                
+                        <p>A loving, nurturing and supportive environment is the foundation of the Suzuki
+                        method.</p>
+                        <p>Since I first sought out training in the Suzuki method, I have been deeply gratified to be able to pass on the gift and joy of making music to my students and their families. </p>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <img src="{% static 'images/HeadShot.jpg' %}" alt="Kate Alm" class="img-fluid img-thumbnail image-shadow">
+                    </div>
+                </div>
+                        <p>Even after a lifetime of immersion in music, both in my childhood home, at music school, and as a professional musician such as I have had (I am happy to forward my resume on request!), being able to teach well is not guaranteed.</p>
+                        <p>I am very pleased to observe, after eleven years, and more to come, of dedicated teacher-training, that my students are playing beautifully, by ear, by reading,and in ensembles. Most importantly, I am gratified to observe that their overall their experience is joyful. I hope that you and your child can be a part of this experience.</p>
+                    
+
                 <p>Just listen to what we can do together!</p>
                 <div class="row justify-content-center">
                 <div class="col-12 col-md-9">
@@ -26,42 +41,80 @@
             <header id="banner-new-students">For New Students</header>
             <div class="container-content">
                 <p>It has taken me years to develop a method for introducing students to the Suzuki Method; it is very rewarding and well worth the investment of your time. This process educates both the parent and child thoroughly, so that when your child begins lessons, he experiences success, excellence, and joy from the very beginning. To get the best possible start in piano and ensure success for your child I require the following:</p>
-                <p>1. Sign up to observe a private and group lesson; schedule a 30 minute consultation with me. Receive and read <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/StudioPolicy.pdf" target="_blank">studio policy</a> and <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/StudioPolicy.pdf" target="_blank">observation etiquette</a> handout. There is no cost for this. </p>
+                <p>1. Sign up to observe a private and group lesson; schedule a 30 minute consultation with me. Receive and read <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/StudioPolicy.pdf" target="_blank">studio policy</a> and <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/Observation.pdf" target="_blank">observation etiquette</a> handout. There is no cost for this. </p>
                 <p>2. Enroll in my 10-week Fall or Spring Suzuki Piano Immersion and Introductory Class. Book and CD included. Cost: $250.</p>
                 <p>3. After you and your child have completed the Suzuki Piano Immersion and Introductory Class, you will be eligible to enroll for lessons. Enrollment is a 45 minute session in which we discuss your and your child's experience so far, (child does not attend), I answer any questions you have, and we go over the <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/StudioPolicy.pdf" target="_blank">studio policy</a> and other handouts together. Cost: $40.</p>
-                <p>To learn more about the dates for the immersion program, as well as to access a repository of all the documents referenced above, please click <a href="{% url 'general:immersion' %}">here.</a></p>
+                <p>To learn more about the dates for the immersion program, as well as to access a repository of all the documents referenced above, please click <a href="{% url 'general:immersion' %}">here</a>.</p>
             </div>
-            {% for brand in brands %}
-            <div class="grid-flex row no-gutters justify-content-center align-items-center p-4">
-                {% if forloop.counter|divisibleby:"2" %}
-                <h3 class="title-brand text-center col-12">{{ brand.brand_name }}</h3>
-                <div class="column-right col-12 col-md-6 order-2">
-                    <p class="content-brand p-3">{{brand.content_blurb}}</p>
-                </div>
-                <div class="column-left col-12 col-md-6 align-self-center order-1">
-                    <img class="img-fluid" src="{{ brand.image_thumbnail.url }}" alt="{{ brand.brand_name }}">
-                </div>
-                {% else %}
-                <h3 class="title-brand text-center col-12">{{ brand.brand_name }}</h3>
-                <div class="column-left col-12 col-md-6 order-1 order-md-2 align-self-center">
-                    <img class="img-fluid" src="{{ brand.image_thumbnail.url }}" alt="{{ brand.brand_name }}">
-                </div>
-                <div class="column-right col-12 col-md-6 order-2 order-md-1">
-                    <p class="content-brand p-3">{{brand.content_blurb}}</p>
-                </div>
-                {% endif %}
-            </div>
-            {% endfor %}
         </section>
         <section id="summer">
-            <header id="banner-summer">Summer Policies</header>
+            <header id="banner-summer">Summer &amp School Year Policies</header>
             <div class="container-content">
-                <p>As stated above, our main goal is what we call, "The Million Member Mission." This is for us to get 1,000,000 people to commit to transforming their health through choosing to be a member of one of our health brands. We know that by doing this, we will create a profitable company while also positively impacting the world for the better.</p>
-                <p>However, we also know that achieving this goal requires that we have a "Team Of Warriors" who are dedicated to our cause. Which is why, Warrior Media is always looking for smart and hard working individuals who are drawn to the idea of helping us grow our company so we can achieve our mission of helping more people live a healthy and happy life.</p>
-                <p>So...if you're a team player, if you love health and fitness and if you are attracted to the idea of working for a company that is dedicated to creating a positive impact in the world then the next step is to learn more about who we are by clicking the link below...</p>
+                <p>During the school year, I schedule lessons at a regular time each week for individual instruction as well as for group lessons. I also conduct all-studio lessons on Fridays about 5 times a year. There are also 5-6 recitals a year.</p>
+                <p>If your child is sick during the school year, please do not hesitate to cancel. This is in everyone’s best interest and the lesson can be rescheduled. Absense for other reasons is not refundable; however, you may trade times with any other student to make up for lost lessons. All of this information is included in my <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/StudioPolicy.pdf" target="_blank">studio policy</a>.</p>
+                <p>Group duos are suspended for the summer - except if you expressly request a summer duo - so that I can work with the children individually on their reading, theory, rhythm and solfa skills. Therefore in place of group duo, you receive 10 extra minutes. Sometimes I use the extra time to just chat with your child about how his summer is going. It is a very nice break from the more formalized lessons during the school year! More information about about summer is in my <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/SummerInfo.pdf" target="_blank">summer fees and fact sheet</a>. </p>
+                <p>This is an abbreviated version of summer and school year policies. For a more complete description please go to the <a href="{% url 'general:summer' %}">summer</a> and <a href="{% url 'general:school_year' %}">school year</a> pages. </p>
                 <div class="link-main-active text-center">
                 </div>
             </div>
         </section>
+        <section id="programs">
+            <header id="banner-summer">Programs</header>
+            <div class="container-content">
+                <p>I offer many many opportunities for us to connect as a community of adults and children learning and appreciating music! For more information about these programs, which include reading club and student-to-student mentoring, please click <a href="{% url 'general:immersion' %}">here</a>. </p>
+                <center><div class="container-carousel">
+                    <div id="owl-carousel" class="owl-carousel owl-theme testimonials text-center mt-2 mt-md-4">
+                        <div class="item mx-auto">
+                            <img src="{% static 'images/IMG_1.jpg' %}" alt="Image 1" class="img-carousel">
+                        </div>
+                        <div class="item mx-auto">
+                            <img src="{% static 'images/IMG_2.jpg' %}" alt="Image 2" class="img-carousel">
+                        </div>
+                        <div class="item mx-auto">
+                            <img src="{% static 'images/IMG_3.jpg' %}" alt="Image 3" class="img-carousel">
+                        </div>
+                        <div class="item mx-auto">
+                            <img src="{% static 'images/IMG_4.jpg' %}" alt="Image 4" class="img-carousel">
+                        </div>
+                        <div class="item mx-auto">
+                            <img src="{% static 'images/IMG_5.jpg' %}" alt="Image 5" class="img-carousel">
+                        </div>
+                        <div class="item mx-auto">
+                            <img src="{% static 'images/IMG_6.jpg' %}" alt="Image 6" class="img-carousel">
+                        </div>
+                        <div class="item mx-auto">
+                            <img src="{% static 'images/IMG_7.jpg' %}" alt="Image 7" class="img-carousel">
+                        </div>
+                        <div class="item mx-auto">
+                            <img src="{% static 'images/IMG_8.jpg' %}" alt="Image 8" class="img-carousel">
+                        </div>
+                    </div>
+                </div></center>
+            </div>
+        </section>
     </div>
 {% endblock main_text %}
+
+{% block page_scripts %}
+    {{block.super}}
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:35,
+        nav:true,
+        dots: true,
+        autoplay:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            {% if testimonials.count < 1 %}
+            768: {
+                items:1,
+                loop:false,
+                nav:false,
+                mouseDrag:false,
+            }         
+            {% endif %}
+        }
+    })
+{% endblock page_scripts %}

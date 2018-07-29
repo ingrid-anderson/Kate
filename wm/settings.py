@@ -171,7 +171,7 @@ MEDIA_ROOT  = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
 #this may never work
 
 
-#from wm.aws.conf import *
+from wm.aws.conf import *
 
 try:
     from .local_settings import *
