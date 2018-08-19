@@ -170,6 +170,12 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
 MEDIA_ROOT  = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
 #this may never work
 
+# Security
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 from wm.aws.conf import *
 
