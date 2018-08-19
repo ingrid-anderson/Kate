@@ -11,18 +11,23 @@
     <div class="container-layout">
         <section>
             <div class="container-content">
-               
+                <div class="row">
+                    <div class="col-12 col-lg-7">
                         <p>Dear interested parent,</p>
                         <p>Thank you for your interest in Suzuki piano!</p>
                 
                         <p>A loving, nurturing and supportive environment is the foundation of the Suzuki
                         method.</p>
                         <p>Since I first sought out training in the Suzuki method, I have been deeply gratified to be able to pass on the gift and joy of making music to my students and their families. </p>
-                    
-                        <p>Even after a lifetime of immersion in music, both in my childhood home, at music school, and as a professional musician such as I have had (I am happy to forward my resume on request!), being able to teach well is not guaranteed.</p>
-                        <p>I am very pleased to observe, after eleven years, and more to come, of dedicated teacher-training, that my students are playing beautifully, by ear, by reading,and in ensembles. Most importantly, I am gratified to observe that their overall their experience is joyful. I hope that you and your child can be a part of this experience.</p>
-                    
+                    </div>
 
+                    <div class="col-12 col-lg-5">
+                        <img src="{% static 'images/HeadShot.jpg' %}" alt="Kate Alm" class="img-fluid img-thumbnail image-shadow">
+                    </div>
+                </div>
+                <p>Even after a lifetime of immersion in music, both in my childhood home, at music school, and as a professional musician such as I have had (I am happy to forward my resume on request!), being able to teach well is not guaranteed.</p>
+                <p>I am very pleased to observe, after eleven years, and more to come, of dedicated teacher-training, that my students are playing beautifully, by ear, by reading,and in ensembles. Most importantly, I am gratified to observe that their overall their experience is joyful. I hope that you and your child can be a part of this experience.</p>
+                    
                 <p>Just listen to what we can do together!</p>
                 <div class="row justify-content-center">
                 <div class="col-12 col-md-9">
@@ -32,6 +37,30 @@
                 </div></div>
             </div>
         </section>
+        <section id="events">
+            <header id="banner-events">Events</header>
+            <div class="container-content">
+                <p>Please put these 9 events on your calendar! More information to follow about the two <strong>Kate Collaborating in Concert</strong> evenings. I am so excited to share this music with you. And it will establish our studio as a donor to and supporters of these other artistic endeavors, thus giving us a way to enrich our greater community.</p>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-9">
+                    <ul>
+                        <li><strong>September 29 Rising Stars MTAC Concert</strong> by invitation from Kate, but plan to attend regardless of whether your child is performing!!!</li>
+                        <li><strong>October 12 Teen Recital</strong> teens please RSVP</li>
+                        <li><strong>October 21 All Studio Recital</strong> 2PM</li>
+                        <li><strong>December 7 Musical Open House</strong> 5-7PM, for all grades</li>
+                        <li><strong>February 9 Kate Collaborating in Concert for 'Shakespeare-To-Go'</strong> Evening for adults and teens: Featuring Anthony Jones, collaborating with Kate Alm, piano, and band, singing Gregory Porter Songbook. *Perfect for Valentine’s Day!!</li>
+                        <li><strong>February 16 Duets Recital</strong> 11AM</li>
+                        <li><strong>April 27 All Studio Recital</strong> 2PM</li>
+                        <li><strong>May 4 Kate Collaborating in Concert for 'Music in May’</strong> Evening for adults and teens: Featuring Peter Jandulah Hudson collaborating with Kate Alm, piano and Including the Franck Sonata and Schumann Fairytales.</li>
+                        <li><strong>May 18 Eli's Mozart Clarinet Concerto with Santa Cruz Youth Symphony!!!</strong> Time and location TBA</li>
+                    </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
         <section id="new-students">
             <header id="banner-new-students">For New Students</header>
             <div class="container-content">
@@ -48,7 +77,7 @@
                 <p>During the school year, I schedule lessons at a regular time each week for individual instruction as well as for group lessons. I also conduct all-studio lessons on Fridays about 5 times a year. There are also 5-6 recitals a year.</p>
                 <p>If your child is sick during the school year, please do not hesitate to cancel. This is in everyone’s best interest and the lesson can be rescheduled. Absense for other reasons is not refundable; however, you may trade times with any other student to make up for lost lessons. All of this information is included in my <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/StudioPolicy.pdf" target="_blank">studio policy</a>.</p>
                 <p>Group duos are suspended for the summer - except if you expressly request a summer duo - so that I can work with the children individually on their reading, theory, rhythm and solfa skills. Therefore in place of group duo, you receive 10 extra minutes. Sometimes I use the extra time to just chat with your child about how his summer is going. It is a very nice break from the more formalized lessons during the school year! More information about about summer is in my <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/SummerInfo.pdf" target="_blank">summer fees and fact sheet</a>. </p>
-                <p>This is an abbreviated version of summer and school year policies. For a more complete description please go to the <a href="{% url 'general:summer' %}">summer</a> and <a href="{% url 'general:school_year' %}">school year</a> pages. </p>
+                <p>This is an abbreviated version of summer and school year policies. For a more complete description please go to the <a href="{% url 'general:events' %}">summer</a> and <a href="{% url 'general:school_year' %}">school year</a> pages. </p>
                 <div class="link-main-active text-center">
                 </div>
             </div>

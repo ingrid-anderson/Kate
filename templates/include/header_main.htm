@@ -1,33 +1,34 @@
 {% load staticfiles %}
 {% url 'general:home' as about_url %}
 {% url 'general:immersion' as immersion_url %}
-{% url 'general:summer' as summer_url %}
+{% url 'general:events' as events_url %}
 {% url 'general:school_year' as school_year_url %}
 {% url 'general:programs' as programs_url %}
 <nav class="navbar navbar-fixed-top navbar-dark navbar-expand-lg container-fluid">
     <a class="navbar-brand navbar-link" href="{% url 'general:home' %}">
         <header class="header-top">
-        <div class="row no-gutters text-center justify-content-center">
+        <div class="row no-gutters text-center">
             <section class="col-12 col-md-7 col-lg-6 col-xl-5 order-2 order-md-1 align-self-center">
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
                 {% if request.path == about_url %}
                 <h1 class="d-none d-lg-block">Kate Alm Suzuki Studio</h1>
                 <h1 class="d-lg-none">Kate Alm</h1>
                 {% endif %}
-                {% if request.path == immersion_url %}
-                <h1>Immersion Program</h1>
+                {% if request.path == events_url %}
+                <h1 class="d-none d-lg-block">Events and Contact Information</h1>
+                <h1 class="d-lg-none">Events/Contact</h1>
                 {% endif %}
-                {% if request.path == summer_url %}
-                <h1 class="d-none d-lg-block">Summer Information</h1>
-                <h1 class="d-lg-none">Summer</h1>
+                {% if request.path == immersion_url %}
+                <h1 class="d-none d-lg-block">Immersion Program</h1>
+                <h1 class="d-lg-none">Immersion</h1>
                 {% endif %}
                 {% if request.path == school_year_url %}
-                <h1 class="d-none d-lg-block">School Year Information</h1>
-                <h1 class="d-lg-none">School Year</h1>
+                <h1 class="d-none d-lg-block">School Year and Summer Policies</h1>
+                <h1 class="d-lg-none">Existing Students</h1>
                 {% endif %}
                 {% if request.path == programs_url %}
-                <h1 class="d-none d-lg-block">Other Programs</h1>
-                <h1 class="d-lg-none">Programs</h1>
+                <h1 class="d-none d-lg-block">Kate's Corner</h1>
+                <h1 class="d-lg-none">Kate's Corner</h1>
                 {% endif %}
             </section>
             
@@ -40,11 +41,11 @@
 
     <div class="collapse navbar-collapse float-right" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto text-center text-md-left">
-            <li id="nav-about" class="nav-item {% if request.path == about_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:home' %}">About</a></li>
-            <li id="nav-immersion" class="nav-item {% if request.path == immersion_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:immersion' %}">Immersion</a></li>
-            <li id="nav-summer" class="nav-item {% if request.path == summer_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:summer' %}">Summer</a></li>
-            <li id="nav-school" class="nav-item {% if request.path == school_year_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:school_year' %}">School Year</a></li>
-            <li id="nav-programs" class="nav-item {% if request.path == programs_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:programs' %}">Programs</a></li>
+            <li id="nav-about" class="nav-item {% if request.path == about_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:home' %}">Home Page</a></li>
+            <li id="nav-events" class="nav-item {% if request.path == events_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:events' %}">Events/Contact</a></li>
+            <li id="nav-immersion" class="nav-item {% if request.path == immersion_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:immersion' %}">New Students</a></li>
+            <li id="nav-school" class="nav-item {% if request.path == school_year_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:school_year' %}">Existing Students</a></li>
+            <li id="nav-programs" class="nav-item {% if request.path == programs_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:programs' %}">Kate's Corner</a></li>
         </ul>
     </div>
 </nav>

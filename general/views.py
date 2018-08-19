@@ -15,10 +15,10 @@ def general_immersion(request):
 
     return(render(request, 'general/immersion.htm', context))
 
-def general_summer(request):
+def general_events(request):
     context = {}
 
-    return(render(request, 'general/summer.htm', context))
+    return(render(request, 'general/events.htm', context))
 
 
 def general_school_year(request):

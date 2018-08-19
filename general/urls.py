@@ -10,7 +10,7 @@ from django.conf.urls.static import static
 from .views import (
 	general_main,
 	general_immersion,
-    general_summer,
+    general_events,
     general_school_year,
     general_programs
 
@@ -19,9 +19,9 @@ from .views import (
 
 urlpatterns = [
     url(r'^$', general_main, name="home"),
-    url(r'^immersion/$', general_immersion, name="immersion"),
-    url(r'^summer/$', general_summer, name="summer"),
-    url(r'^school-year/$', general_school_year, name="school_year"),
+    url(r'^new-students/$', general_immersion, name="immersion"),
+    url(r'^events/$', general_events, name="events"),
+    url(r'^existing-students/$', general_school_year, name="school_year"),
     url(r'^programs/$', general_programs, name="programs"),
 
 ]
