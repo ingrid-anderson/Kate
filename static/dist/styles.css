@@ -151,8 +151,8 @@ img {
 
 .next_event_banner {
 	background-color: #7a52ff;
-	color: #ffffff
-	padding-left: 25px
+	color: white;
+	margin-left: 25px
 }
 
 .navbar-nav > li.active > a {
