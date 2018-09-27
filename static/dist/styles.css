@@ -150,7 +150,8 @@ img {
 }
 
 .next_event_banner {
-	color: #7a52ff;
+	background-color: #7a52ff;
+	color: #ffffff
 	padding-left: 25px
 }
 
