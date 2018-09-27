@@ -149,6 +149,11 @@ img {
     padding-left: 25px
 }
 
+.next_event_banner {
+	color: #7a52ff;
+	padding-left: 25px
+}
+
 .navbar-nav > li.active > a {
     font-weight: 450;
 }

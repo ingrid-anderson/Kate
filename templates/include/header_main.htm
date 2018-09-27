@@ -6,7 +6,7 @@
 {% url 'general:programs' as programs_url %}
 <nav class="navbar navbar-fixed-top navbar-dark navbar-expand-lg container-fluid">
     <a class="navbar-brand navbar-link" href="{% url 'general:home' %}">
-        <header class="header-top">
+    <header class="header-top">
         <div class="row no-gutters text-center">
             <section class="col-12 col-md-7 col-lg-6 col-xl-5 order-2 order-md-1 align-self-center">
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
@@ -31,8 +31,14 @@
                 <h1 class="d-lg-none">Kate's Corner</h1>
                 {% endif %}
             </section>
-            
         </div>
+    	<div class="next_event_banner">
+    		<section class="col-12 col-md-7 col-lg-6 col-xl-5 order-2 order-md-1 align-self-center">
+    			{% if request.path == about_url %}
+    			<h3><strong>Next event: September 29 Rising Stars MTAC Concert</strong></h3> <h4>7:30PM at 220 Spring Street</h4>
+    			{% endif %}
+    		</section>
+    	</div>
     </header>
     </a>
     <button class="navbar-toggler navbar-toggler-right navbar-toggler-icon" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
