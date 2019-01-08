@@ -52,7 +52,7 @@
             <li id="nav-about" class="nav-item {% if request.path == about_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:home' %}">Home Page</a></li>
             <li id="nav-events" class="nav-item {% if request.path == events_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:events' %}">Events/Contact</a></li>
             <li id="nav-immersion" class="nav-item {% if request.path == immersion_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:immersion' %}">New Students</a></li>
-            <li id="nav-school" class="nav-item {% if request.path == school_year_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:school_year' %}">Existing Students</a></li>
+            <li id="nav-school" class="nav-item {% if request.path == school_year_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:school_year' %}">Current Students</a></li>
             <li id="nav-programs" class="nav-item {% if request.path == programs_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:programs' %}">Kate's Corner</a></li>
         </ul>
     </div>
