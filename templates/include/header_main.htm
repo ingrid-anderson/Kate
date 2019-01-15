@@ -36,7 +36,8 @@
         	<section class="col-12 col-md-7 col-lg-6 col-xl-5 order-2 order-md-1 align-self-center">
         	<p style="color:#9166b8"> <!-- why isn't the color working?? -->
         		{% if request.path == about_url %}
-                <h3 class="d-none d-lg-block"><strong>Next event: February 16 Duets Recital</strong></h3><h4 class="d-none d-lg-block">11 AM Music Room</h4>
+                <h3 class="d-none d-lg-block"><strong>Next events: February 9 Duets Recital and Carnival of the Animals</strong></h3><h4 class="d-none d-lg-block">4PM House Concert (see posters)</h4>
+                <h3 class="d-none d-lg-block"><strong>February 16 K-6 Duets Recital and Tony's Book 1</strong></h3><h4 class="d-none d-lg-block">11 AM Music Room</h4>
         		{% endif %}
         	</p>
         	</section>
@@ -51,7 +52,7 @@
         <ul class="navbar-nav ml-auto text-center text-md-left">
             <li id="nav-about" class="nav-item {% if request.path == about_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:home' %}">Home Page</a></li>
             <li id="nav-events" class="nav-item {% if request.path == events_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:events' %}">Events/Contact</a></li>
-            <li id="nav-immersion" class="nav-item {% if request.path == immersion_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:immersion' %}">New Students</a></li>
+            <li id="nav-immersion" class="nav-item {% if request.path == immersion_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:immersion' %}">New/Prospective Students</a></li>
             <li id="nav-school" class="nav-item {% if request.path == school_year_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:school_year' %}">Current Students</a></li>
             <li id="nav-programs" class="nav-item {% if request.path == programs_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:programs' %}">Kate's Corner</a></li>
         </ul>
