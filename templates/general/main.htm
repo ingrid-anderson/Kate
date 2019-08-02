@@ -40,13 +40,19 @@
                 </div>
             </div>
         </section>
+        <section id="events">
+            <header id="banner-events">Events</header>
+            {% include "include/events_list.htm" %}
+        </section>
         <section id="new-students">
             <header id="banner-new-students">For New Students</header>
             <div class="container-content">
-                <p>It has taken me years to develop a method for introducing students to the Suzuki Method; it is very rewarding and well worth the investment of your time. This process educates both the parent and child thoroughly, so that when your child begins lessons, he experiences success, excellence, and joy from the very beginning. To get the best possible start in piano and ensure success for your child I require the following:</p>
-                <p>1. Sign up to observe a private and group lesson; schedule a 30 minute consultation with me. Receive and read <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/StudioPolicy.pdf" target="_blank">studio policy</a> and <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/Observation.pdf" target="_blank">observation etiquette</a> handout. There is no cost for this. </p>
-                <p>2. Enroll in my 10-week Fall or Spring Suzuki Piano Immersion and Introductory Class. Book and CD included. Cost: $250.</p>
-                <p>3. After you and your child have completed the Suzuki Piano Immersion and Introductory Class, you will be eligible to enroll for lessons. Enrollment is a 45 minute session in which we discuss your and your child's experience so far, (child does not attend), I answer any questions you have, and we go over the <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/StudioPolicy.pdf" target="_blank">studio policy</a> and other handouts together. Cost: $40.</p>
+                <p>It has taken me years to develop a method for introducing students to the Suzuki Method; it is very rewarding and well worth the investment of your time. This process educates both the parent and child thoroughly, so that when your child begins lessons, he experiences success, excellence, and joy from the very beginning. To get the best possible start in piano and ensure success for your child I require the following:</ol>
+                <li>
+                    <ol>Sign up to observe a private and group lesson; schedule a 30 minute consultation with me. Receive and read <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/StudioPolicy.pdf" target="_blank">studio policy</a> and <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/Observation.pdf" target="_blank">observation etiquette</a> handout. There is no cost for this. </ol>
+                    <ol>Enroll in my 10-week Fall or Spring Suzuki Piano Immersion and Introductory Class. Book and CD included. Cost: $250.</p>
+                    <ol>After you and your child have completed the Suzuki Piano Immersion and Introductory Class, you will be eligible to enroll for lessons. Enrollment is a 45 minute session in which we discuss your and your child's experience so far, (child does not attend), I answer any questions you have, and we go over the <a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/StudioPolicy.pdf" target="_blank">studio policy</a> and other handouts together. Cost: $40.</ol>
+                </li>
                 <p>To learn more about the dates for the immersion program, as well as to access a repository of all the documents referenced above, please click <a href="{% url 'general:immersion' %}">here</a>.</p>
             </div>
         </section>
@@ -60,10 +66,6 @@
                 <div class="link-main-active text-center">
                 </div>
             </div>
-        </section>
-        <section id="events">
-            <header id="banner-events">Events</header>
-            {% include "include/events_list.htm" %}
         </section>
         <section id="programs">
             <header id="banner-summer">Programs</header>
