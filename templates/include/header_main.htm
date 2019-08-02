@@ -27,8 +27,8 @@
                 <h1 class="d-lg-none">Current Students</h1>
                 {% endif %}
                 {% if request.path == programs_url %}
-                <h1 class="d-none d-lg-block">Kate's Corner</h1>
-                <h1 class="d-lg-none">Kate's Corner</h1>
+                <h1 class="d-none d-lg-block">Kate's Inspiration</h1>
+                <h1 class="d-lg-none">Kate's Inspiration</h1>
                 {% endif %}
             </section>
         </div>
@@ -53,7 +53,7 @@
             <li id="nav-events" class="nav-item {% if request.path == events_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:events' %}">Events/Contact</a></li>
             <li id="nav-immersion" class="nav-item {% if request.path == immersion_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:immersion' %}">New/Prospective Students</a></li>
             <li id="nav-school" class="nav-item {% if request.path == school_year_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:school_year' %}">Current Students</a></li>
-            <li id="nav-programs" class="nav-item {% if request.path == programs_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:programs' %}">Kate's Corner</a></li>
+            <li id="nav-programs" class="nav-item {% if request.path == programs_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:programs' %}">Kate's Inspiration</a></li>
         </ul>
     </div>
 </nav>
