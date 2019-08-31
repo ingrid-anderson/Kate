@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'general',
-    'storages',
+    # 'storages',
     # 'compressor',
 ]
 
@@ -154,10 +154,10 @@ USE_TZ = True
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-import dj_database_url
-db_from_env = dj_database_url.config()
+# import dj_database_url
+# db_from_env = dj_database_url.config()
 DATABASES = {'default': {}}
-DATABASES['default'].update(db_from_env)
+# DATABASES['default'].update(db_from_env)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
@@ -177,7 +177,7 @@ SECURE_SSL_REDIRECT = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
-from wm.aws.conf import *
+# from wm.aws.conf import *
 
 try:
     from .local_settings import *
