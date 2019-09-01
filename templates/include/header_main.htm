@@ -16,11 +16,11 @@
                 {% endif %}
                 {% if request.path == events_url %}
                 <h1 class="d-none d-lg-block">Events and Contact Information</h1>
-                <h1 class="d-lg-none">Events/Contact</h1>
+                <h1 class="d-lg-none">Events &amp Contact</h1>
                 <h3 class="d-none d-lg-block">Kate Alm Suzuki Piano Studio</h3>
                 {% endif %}
                 {% if request.path == immersion_url %}
-                <h1 class="d-none d-lg-block">Immersion Program</h1>
+                <h1 class="d-none d-lg-block">Immersion Program - New Students</h1>
                 <h1 class="d-lg-none">Immersion</h1>
                 <h3 class="d-none d-lg-block">Kate Alm Suzuki Piano Studio</h3>
                 {% endif %}
@@ -40,7 +40,9 @@
         	<section class="col-12 col-md-7 col-lg-6 col-xl-5 order-2 order-md-1 align-self-center">
         	<p style="color:#9166b8">
         		{% if request.path == about_url %}
-                <h3 class="d-none d-lg-block"><strong>Next Event: Solmaaz Adeli & Friends Americana Concert</strong></h3><h4>Friday September 20, 2019 7 PM, West Side Residence<a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/Sep20Americana.pdf">More Information</a> </h4>
+                <h3 class="d-none d-lg-block"><strong>Next Events: Vien's Book 1 Recital</strong> <p>Saturday September 7 10:30 AM, Music Room (During ASC 9-10)</p></h3>
+                <h3 class="d-none d-lg-block"><strong>Studio Open to New Families </strong>September 16-30</h3>
+                <h3 class="d-none d-lg-block"><strong>Solmaaz Adeli & Friends Americana Concert</strong></h3><h4>Friday September 20, 2019 7 PM, West Side Residence<a href="https://s3-us-west-2.amazonaws.com/ka-public/PDFs/Sep20Americana.pdf">More Information</a> </h4>
         		{% endif %}
         	</p>
         	</section>
@@ -54,8 +56,8 @@
     <div class="collapse navbar-collapse float-right" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto text-center text-md-left">
             <li id="nav-about" class="nav-item {% if request.path == about_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:home' %}">Home Page</a></li>
-            <li id="nav-events" class="nav-item {% if request.path == events_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:events' %}">Events/Contact</a></li>
-            <li id="nav-immersion" class="nav-item {% if request.path == immersion_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:immersion' %}">New/Prospective Students</a></li>
+            <li id="nav-events" class="nav-item {% if request.path == events_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:events' %}">Events & Contact</a></li>
+            <li id="nav-immersion" class="nav-item {% if request.path == immersion_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:immersion' %}">Prospective Students</a></li>
             <li id="nav-school" class="nav-item {% if request.path == school_year_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:school_year' %}">Current Students</a></li>
             <li id="nav-programs" class="nav-item {% if request.path == programs_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:programs' %}">Kate's Inspiration</a></li>
         </ul>

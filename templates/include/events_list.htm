@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% url 'general:events' as events_url %}
 
 <div class="container-content">
     <p>Please put these events for the 2019-2020 school year on your calendar!</p>
@@ -6,11 +7,13 @@
         <div class="col-12 col-lg-9">
         <ul>
             <li>October 20 Fall Recital 2:00 PM (Sanctuary)</li>
+            <li>November 23 Music in May Benefit Chamber Concert - Doors Open 7 PM (West Side Location)</li>
             <li>December 7 Musical Open House K-8 Drop In / Potluck 10:30 AM - 12:00 PM (Music Room)</li>
             <li>February 1 Book 2-3 Students Rehearsal for Duets Recital 9:00 AM - 12:00 PM (Music Room)</li>
+            <li>February 8 Evening of Poetry and Song benefiting Hospice Santa Cruz - Doors Open 7 PM (West Side Location)</li>
             <li>February 15 Duets Recital 11:00 AM (Music Room)</li>
             <li>May 2 Spring Recital 11:00 AM (Sanctuary) ... step outside afterwards to the pre-school Spring fair with adorable petting zoo!</li>
-            <li>2 Celebrating Collaboration House Concerts. All Teens & Adults, Book 2 and higher should attend. Dates/times TBA. These concerts will benefit:</li>
+            <li>2 Celebrating Collaboration House Concerts. All Teens & Adults, Book 2 and higher should attend, November 23 and February 8. These concerts will benefit:</li>
             <ul>
                 <li>Hospice of Santa Cruz</li>
                 <li>Music in May</li>
@@ -18,17 +21,18 @@
         </ul>
         </div>
     </div>
-    <p>K-6 All Studio Classes in 2019-2020 on Saturdays, 10-11 AM:</p>
+    <p>K-6 All Studio Classes in 2019-2020 on Saturdays:
+        <br>Group A 9-10 & Group B 9:45 - 10:45:</p>
     <div class="row justify-content-center">
         <div class="col-12 col-lg-9">
         <ul>
-            <li>September 7</li>
+            <li>September 7 (10-11 all students)</li>
             <li>October 5</li>
             <li>November 23</li>
             <li>January 18</li>
             <li>March 7</li>
             <li>April 18</li>
-            <li>May 30 Last Potluck / Celebration</li>
+            <li>May 30 Last Potluck / Celebration (10-11 all students)</li>
         </ul>
         </div>
     </div>
@@ -44,6 +48,7 @@
         </div>
         <p>Note that Reading Club and Makeup dates are also available for: September 7, October 5, November 2, November 23, December 7, January 4, February 1, March 7, April 18, June 6</p>
     </div>
+    {% if request.path == events_url %}
     <p>Recent events:</p>
     <div class="row justify-content-center">
         <div class="col-12 col-lg-9">
@@ -63,4 +68,5 @@
         </ul>
         </div>
     </div>
+    {% endif %}
 </div>
