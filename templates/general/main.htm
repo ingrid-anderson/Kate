@@ -84,60 +84,15 @@
         <section id="programs">
             <header id="banner-summer">Programs</header>
             <div class="container-content">
-                <p>I offer many many opportunities for us to connect as a community of adults and children learning and appreciating music! For more information about these programs, which include reading club and student-to-student mentoring, please click <a href="{% url 'general:immersion' %}">here</a>. </p>
+                <p>I offer many opportunities for us to connect as a community of adults and children learning and appreciating music! For more information about these programs, which include reading club and student-to-student mentoring, please click <a href="{% url 'general:immersion' %}">here</a>. </p>
                 <center><div class="container-carousel">
                     <div id="owl-carousel" class="owl-carousel owl-theme">
-                        <div class="item mx-auto">
-                            <img src="{% static 'images/KVC.jpg' %}" alt="Caroline, Vivian, and Kate" class="img-carousel">
-                        </div>
-                        <div class="item mx-auto">
-                            <img src="{% static 'images/IMG_1.jpg' %}" alt="Image 1" class="img-carousel">
-                        </div>
-                        <div class="item mx-auto">
-                            <img src="{% static 'images/CarolineRosie.jpeg' %}" alt="Caroline & Rosie" class="img-carousel">
-                        </div>
-                        <div class="item mx-auto">
-                            <img src="{% static 'images/IMG_2.jpg' %}" alt="Image 2" class="img-carousel">
-                        </div>
-                        <div class="item mx-auto">
-                            <img src="{% static 'images/IMG_3.jpg' %}" alt="Image 3" class="img-carousel">
-                        </div>
-                        <div class="item mx-auto">
-                            <img src="{% static 'images/CarolineVivian.JPG' %}" alt="Caroline & Vivian" class="img-carousel">
-                        </div>
-                        <div class="item mx-auto">
-                            <img src="{% static 'images/IMG_4.jpg' %}" alt="Image 4" class="img-carousel">
-                        </div>
-                        <div class="item mx-auto">
-                            <img src="{% static 'images/IMG_5.jpg' %}" alt="Image 5" class="img-carousel">
-                        </div>
-                        <div class="item mx-auto">
-                            <img src="{% static 'images/IMG_6.jpg' %}" alt="Image 6" class="img-carousel">
-                        </div>
-                        <div class="item mx-auto">
-                            <img src="{% static 'images/IMG_7.jpg' %}" alt="Image 7" class="img-carousel">
-                        </div>
-                        <div class="item mx-auto">
-                            <img src="{% static 'images/IMG_8.jpg' %}" alt="Image 8" class="img-carousel">
-                        </div>
-                        <div class="item mx-auto">
-                            <img src="{% static 'images/IMG_9.jpg' %}" alt="Image 9" class="img-carousel">
-                        </div>
+                        <div class="item mx-auto"><img src="{% static 'images/carousel/2_boys.jpeg' %}" alt="2_boys.jpeg" class="img-carousel"></div><div class="item mx-auto"><img src="{% static 'images/carousel/lying_down1.jpeg' %}" alt="lying_down1.jpeg" class="img-carousel"></div><div class="item mx-auto"><img src="{% static 'images/carousel/book.jpeg' %}" alt="book.jpeg" class="img-carousel"></div><div class="item mx-auto"><img src="{% static 'images/carousel/IMG_2382.jpeg' %}" alt="IMG_2382.jpeg" class="img-carousel"></div><div class="item mx-auto"><img src="{% static 'images/carousel/lvkk_meera.jpeg' %}" alt="lvkk_meera.jpeg" class="img-carousel"></div><div class="item mx-auto"><img src="{% static 'images/carousel/big_boy_zoom.jpeg' %}" alt="big_boy_zoom.jpeg" class="img-carousel"></div><div class="item mx-auto"><img src="{% static 'images/carousel/zoom3.jpeg' %}" alt="zoom3.jpeg" class="img-carousel"></div><div class="item mx-auto"><img src="{% static 'images/carousel/girl_dog.jpeg' %}" alt="girl_dog.jpeg" class="img-carousel"></div><div class="item mx-auto"><img src="{% static 'images/carousel/IMG_2594.jpeg' %}" alt="IMG_2594.jpeg" class="img-carousel"></div><div class="item mx-auto"><img src="{% static 'images/carousel/dog.jpeg' %}" alt="dog.jpeg" class="img-carousel"></div><div class="item mx-auto"><img src="{% static 'images/carousel/recital_zoom.jpeg' %}" alt="recital_zoom.jpeg" class="img-carousel"></div><div class="item mx-auto"><img src="{% static 'images/carousel/shark.jpeg' %}" alt="shark.jpeg" class="img-carousel"></div><div class="item mx-auto"><img src="{% static 'images/carousel/zoom.jpeg' %}" alt="zoom.jpeg" class="img-carousel"></div><div class="item mx-auto"><img src="{% static 'images/carousel/sheep.jpeg' %}" alt="sheep.jpeg" class="img-carousel"></div><div class="item mx-auto"><img src="{% static 'images/carousel/lulu_viv_kate_kiddo.jpeg' %}" alt="lulu_viv_kate_kiddo.jpeg" class="img-carousel"></div>
                     </div>
                 </div></center>
             </div>
         </section>
     </div>
-
-<script>
-    let owl = document.getElementById("owl-carousel");
-    let images = ["sheep.jpeg", "shark.jpeg"];
-    for(image in images) {
-        console.log(images[image]);
-        owl.innerHTML = owl.innerHTML + '<div class=\"item mx-auto\"><img src=\"{% static \'images/carousel/' + images[image] + '\' %}\" alt=\"Image 5\" class=\"img-carousel\"></div>';
-    }
-    console.log(owl.innerHTML);
-</script>
 
 {% endblock main_text %}
 
