@@ -128,6 +128,17 @@
             </div>
         </section>
     </div>
+
+<script>
+    let owl = document.getElementById("owl-carousel");
+    let images = ["sheep.jpeg", "shark.jpeg"];
+    for(image in images) {
+        console.log(images[image]);
+        owl.innerHTML = owl.innerHTML + '<div class=\"item mx-auto\"><img src=\"{% static \'images/carousel/' + images[image] + '\' %}\" alt=\"Image 5\" class=\"img-carousel\"></div>';
+    }
+    console.log(owl.innerHTML);
+</script>
+
 {% endblock main_text %}
 
 {% block page_scripts %}
