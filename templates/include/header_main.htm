@@ -30,22 +30,22 @@
                 <h3 class="d-none d-lg-block">Kate Alm Suzuki Piano Studio</h3>
                 {% endif %}
                 {% if request.path == programs_url %}
-                <h1 class="d-none d-lg-block">Kate's Inspiration</h1>
-                <h1 class="d-lg-none">Kate's Inspiration</h1>
+                <h1 class="d-none d-lg-block">Studio Culture</h1>
+                <h1 class="d-lg-none">Studio Culture</h1>
                 <h3 class="d-none d-lg-block">Kate Alm Suzuki Piano Studio</h3>
                 {% endif %}
             </section>
         </div>
         <div>
-            {% if request.path == about_url %}
-         	<section> <!--class="col-12 col-md-7 col-lg-6 col-xl-5 order-2 order-md-1 align-self-center"> -->
+        	<section class="col-12 col-md-7 col-lg-6 col-xl-5 order-2 order-md-1 align-self-center">
         	<p style="color:#9166b8">
-                <h3><p>2020-21 event schedule is posted in the Events page</p></h3>
+        		{% if request.path == about_url %}
+                <h3><p><strong>Summer Session June 8 - August 21</strong></p><p>2020-21 event schedule will be posted August 1</p></h3>
                 <p><a href="https://katealmsuzukipianostudio.com/programs#blm">Read Kate's statement in support of Black Lives Matter</a></p>
                 <p><a href="https://suzukiassociation.org/news/cultivating-oestrong-arms-treea-keeping-teens/">Kate’s Article about her Suzuki Student-to-Student Mentoring program has been published!</a></p>
+        		{% endif %}
         	</p>
         	</section>
-        {% endif %}
         </div>
     </header>
     </a>
@@ -59,7 +59,7 @@
             <li id="nav-events" class="nav-item {% if request.path == events_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:events' %}">Events & Contact</a></li>
             <li id="nav-immersion" class="nav-item {% if request.path == immersion_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:immersion' %}">Prospective Students</a></li>
             <li id="nav-school" class="nav-item {% if request.path == school_year_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:school_year' %}">Current Students</a></li>
-            <li id="nav-programs" class="nav-item {% if request.path == programs_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:programs' %}">Kate's Inspiration</a></li>
+            <li id="nav-programs" class="nav-item {% if request.path == programs_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:programs' %}">Studio culture</a></li>
         </ul>
     </div>
 </nav>
