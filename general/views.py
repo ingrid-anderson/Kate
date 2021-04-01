@@ -29,6 +29,6 @@ def general_programs(request):
     context = {}
     return(render(request, 'general/programs.htm', context))
 
-def general_newpage(request):
+def general_musicalsoulmates(request):
     context = {}
-    return(render(request, 'general/newpage.html', context))
+    return(render(request, 'general/musicalsoulmates.htm', context))
