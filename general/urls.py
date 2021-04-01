@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^events/$', general_events, name="events"),
     url(r'^existing-students/$', general_school_year, name="school_year"),
     url(r'^programs/$', general_programs, name="programs"),
-    url(r'^musicalsoulmates/$', general_newpage, name="musicalsoulmates"),
+    url(r'^musicalsoulmates/$', general_musicalsoulmates, name="musicalsoulmates"),
 
 ]
 
