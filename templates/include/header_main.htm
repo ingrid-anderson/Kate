@@ -4,6 +4,7 @@ o{% load staticfiles %}
 {% url 'general:events' as events_url %}
 {% url 'general:school_year' as school_year_url %}
 {% url 'general:programs' as programs_url %}
+{% url 'general:musicalsoulmates' as musicalsoulmates_url %}
 <nav class="navbar navbar-fixed-top navbar-dark navbar-expand-lg container-fluid">
     <a class="navbar-brand navbar-link" href="{% url 'general:home' %}">
     <header class="header-top">
@@ -34,6 +35,11 @@ o{% load staticfiles %}
                 <h1 class="d-lg-none">Studio Archives</h1>
                 <h3 class="d-none d-lg-block">Kate Alm Suzuki Piano Studio</h3>
                 {% endif %}
+                {% if request.path == musicalsoulmates_url %}
+                <h1 class="d-none d-lg-block">Musical Soulmates</h1>
+                <h1 class="d-lg-none">Musical Soulmates</h1>
+                <h3 class="d-none d-lg-block">Kate Alm Suzuki Piano Studio</h3>
+                {% endif %}
             </section>
         </div>
   </script>
@@ -61,7 +67,8 @@ o{% load staticfiles %}
             <li id="nav-events" class="nav-item {% if request.path == events_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:events' %}">Events & Contact</a></li>
             <li id="nav-immersion" class="nav-item {% if request.path == immersion_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:immersion' %}">Prospective Students</a></li>
             <li id="nav-school" class="nav-item {% if request.path == school_year_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:school_year' %}">Current Students</a></li>
-            <li id="nav-programs" class="nav-item {% if request.path == programs_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:programs' %}">Studio Arrchives</a></li>
+            <li id="nav-programs" class="nav-item {% if request.path == programs_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:programs' %}">Studio Archives</a></li>
+            <li id="nav-musicalsoulmates" class="nav-item {% if request.path == musicalsoulmates_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:musicalsoulmates' %}">Musical Soulmates</a></li>
         </ul>
     </div>
 </nav>
