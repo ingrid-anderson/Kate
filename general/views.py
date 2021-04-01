@@ -28,3 +28,7 @@ def general_school_year(request):
 def general_programs(request):
     context = {}
     return(render(request, 'general/programs.htm', context))
+
+def general_newpage(request):
+    context = {}
+    return(render(request, 'general/newpage.html', context))
