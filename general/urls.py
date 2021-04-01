@@ -13,7 +13,7 @@ from .views import (
     	general_events,
     	general_school_year,
     	general_programs,
-	general_newpage
+	general_musicalsoulmates
 
 )
 
@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^events/$', general_events, name="events"),
     url(r'^existing-students/$', general_school_year, name="school_year"),
     url(r'^programs/$', general_programs, name="programs"),
-    url(r'^newpage/$', general_newpage, name="newpage"),
+    url(r'^musicalsoulmates/$', general_newpage, name="musicalsoulmates"),
 
 ]
 
