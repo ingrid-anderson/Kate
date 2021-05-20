@@ -3,3 +3,4 @@ db.sqlite3
 mydatabase
 wm/local_settings.py
 Images_to_Upload
+.DS_Store

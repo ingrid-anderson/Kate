@@ -6,11 +6,11 @@
 {% url 'general:programs' as programs_url %}
 {% url 'general:musicalsoulmates' as musicalsoulmates_url %}
 <nav class="navbar navbar-fixed-top navbar-dark navbar-expand-lg container-fluid">
-    <a class="navbar-brand navbar-link" href="{% url 'general:home' %}">
     <header class="header-top">
+    <a class="navbar-brand navbar-link" href="{% url 'general:home' %}">
         <div class="row no-gutters text-center">
             <section class="col-12 col-md-7 col-lg-6 col-xl-5 order-2 order-md-1 align-self-center">
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
                 {% if request.path == about_url %}
                 <h1 class="d-none d-lg-block">Kate Alm Suzuki Piano Studio</h1>
                 <h1 class="d-lg-none">Kate Alm</h1>
@@ -42,14 +42,15 @@
                 {% endif %}
             </section>
         </div>
+    </a>
   </script>
         <div>
             {% if request.path == about_url %}
         	<section>
         	<p style="color:#9166b8">
-                <h3><p><strong>Next Recital:May 15: Studio Recital( 11:00AM )</strong></p></h3>
-                <p><a href="https://katealmsuzukipianostudio.com/programs#blm">Read Kate's statement in support of Black Lives Matter</a></p>
-                <p><a href="https://suzukiassociation.org/news/cultivating-oestrong-arms-treea-keeping-teens/">Kate’s Article about her Suzuki Student-to-Student Mentoring program has been published!</a></p>
+                <h3><p><strong>Summer Session runs June 15 - August 16</strong></p></h3>
+                <p><a class="header-link" href="https://katealmsuzukipianostudio.com/programs#blm">Read Kate's statement in support of Black Lives Matter</a></p>
+                <p><a class="header-link" href="https://suzukiassociation.org/news/cultivating-oestrong-arms-treea-keeping-teens/" target="_blank">Kate’s Article about her Suzuki Student-to-Student Mentoring program has been published!</a></p>
                 <h3><p></a>
                     </p></h3>
         	</section>
