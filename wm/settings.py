@@ -176,13 +176,10 @@ CSRF_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-
-from wm.aws.conf import *
-
 try:
     from .local_settings import *
 except:
-    pass
+    from wm.aws.conf import *
 
 # print("MEDIA_ROOT", MEDIA_ROOT)
 # print("STATIC_ROOT", STATIC_ROOT)
