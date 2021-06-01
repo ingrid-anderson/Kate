@@ -334,6 +334,10 @@ footer a {
     color: white
 }
 
+footer a:hover {
+    color: lightblue;
+}
+
 footer .social-media {
     background-color: #323232;
     height: 100px;
