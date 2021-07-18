@@ -528,3 +528,8 @@ body {
 .header-link:hover {
     color: lightblue;
 }
+
+#blm_header {
+    font-size: 3em;
+    margin-top: 100px;
+}
