@@ -21,7 +21,7 @@
                 <h3 class="d-none d-lg-block">Kate Alm Suzuki Piano Studio</h3>
                 {% endif %}
                 {% if request.path == immersion_url %}
-                <h1 class="d-none d-lg-block">Immersion Program - New Students</h1>
+                <h1 class="d-none d-lg-block">Immersion Program - New Families</h1>
                 <h1 class="d-lg-none">Immersion</h1>
                 <h3 class="d-none d-lg-block">Kate Alm Suzuki Piano Studio</h3>
                 {% endif %}
@@ -48,7 +48,7 @@
             {% if request.path == about_url %}
         	<section>
         	<p style="color:#9166b8">
-                <h3><p><strong>Next Studio Event: <a href="https://digitalsoulmatesjoy.eventbrite.com">Musical Soulmates Concert</a> - November 21</strong></p></h3>
+                <h3><p><strong>Next Studio Event: <strong>Winter Immersion for new families: February 7, 2022.</strong> Registration January 25 - February 4
                 {#<p><a class="header-link" href="https://suzukiassociation.org/news/cultivating-oestrong-arms-treea-keeping-teens/" target="_blank">Kate’s Article about her Suzuki Student-to-Student Mentoring program has been published!</a></p>#}
             <p>Now teaching with the option of in-person lessons</p>
                 </p>
@@ -67,7 +67,7 @@
         <ul class="navbar-nav ml-auto text-center text-md-left">
             <li id="nav-about" class="nav-item {% if request.path == about_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:home' %}">Home Page</a></li>
             <li id="nav-events" class="nav-item {% if request.path == events_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:events' %}">Events & Contact</a></li>
-            <li id="nav-immersion" class="nav-item {% if request.path == immersion_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:immersion' %}">Prospective Students</a></li>
+            <li id="nav-immersion" class="nav-item {% if request.path == immersion_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:immersion' %}">New Families</a></li>
             <li id="nav-school" class="nav-item {% if request.path == school_year_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:school_year' %}">Current Students</a></li>
             <li id="nav-programs" class="nav-item {% if request.path == programs_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:programs' %}">Studio Archives</a></li>
             <li id="nav-musicalsoulmates" class="nav-item {% if request.path == musicalsoulmates_url %}active{% endif %}"><a class="nav-link" href="{% url 'general:musicalsoulmates' %}">Musical Soulmates</a></li>
