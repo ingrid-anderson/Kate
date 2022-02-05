@@ -15,7 +15,8 @@ from .views import (
     general_events,
     general_school_year,
     general_programs,
-	general_musicalsoulmates
+	general_musicalsoulmates,
+    general_harmonyyouth
 
 )
 
@@ -27,6 +28,7 @@ urlpatterns = [
     url(r'^existing-students/$', general_school_year, name="school_year"),
     url(r'^programs/$', general_programs, name="programs"),
     url(r'^musicalsoulmates/$', general_musicalsoulmates, name="musicalsoulmates"),
+    url(r'^harmonyyouth/$', general_harmonyyouth, name="harmonyyouth"),
     url('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('images/favicon.ico')))
 ]
 
