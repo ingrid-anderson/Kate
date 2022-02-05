@@ -12,14 +12,11 @@ def general_main(request):
 
 def general_immersion(request):
     context = {}
-
     return(render(request, 'general/immersion.htm', context))
 
 def general_events(request):
     context = {}
-
     return(render(request, 'general/events.htm', context))
-
 
 def general_school_year(request):
     context = {}
@@ -32,3 +29,7 @@ def general_programs(request):
 def general_musicalsoulmates(request):
     context = {}
     return(render(request, 'general/musicalsoulmates.htm', context))
+
+def general_harmonyyouth(request):
+    context = {}
+    return(render(request, 'general/harmonyyouth.htm', context))
